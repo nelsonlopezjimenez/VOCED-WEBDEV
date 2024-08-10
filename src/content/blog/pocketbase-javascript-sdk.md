@@ -1,6 +1,7 @@
 ---
 title: PocketBase JavaScript SDK
 date: 5/10/2024
+myData: pocketbase-javascript-sdk
 ---
 PocketBase JavaScript SDK
 ======================================================================

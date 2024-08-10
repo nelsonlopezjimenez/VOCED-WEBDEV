@@ -1,7 +1,7 @@
 ---
 title: Module 1
 date: 4/1/2024
-myData: Introduction to the module, The app requirements, How we’re going to store the data, Data modeling after the requisites, PocketBase installation options, Explore PocketBase,
+myData: 1 my Introduction to the module, The app requirements, How we’re going to store the data, Data modeling after the requisites, PocketBase installation options, Explore PocketBase,
 ---
 
 # Hi there! Welcome to class!!!

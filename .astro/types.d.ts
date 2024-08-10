@@ -126,6 +126,20 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"TUTORIAL.md": {
+	id: "TUTORIAL.md";
+  slug: "tutorial";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"cors.md": {
+	id: "cors.md";
+  slug: "cors";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "finalq2.md": {
 	id: "finalq2.md";
   slug: "finalq2";
@@ -140,9 +154,37 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"http-verbs-definition.md": {
+	id: "http-verbs-definition.md";
+  slug: "http-verbs-definition";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"mdn-website-security.md": {
+	id: "mdn-website-security.md";
+  slug: "mdn-website-security";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "my.md": {
 	id: "my.md";
   slug: "my";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"my101.md": {
+	id: "my101.md";
+  slug: "my101";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"my102.md": {
+	id: "my102.md";
+  slug: "my102";
   body: string;
   collection: "blog";
   data: any
@@ -182,6 +224,41 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"my6.md": {
+	id: "my6.md";
+  slug: "my6";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"my7.md": {
+	id: "my7.md";
+  slug: "my7";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"my8.md": {
+	id: "my8.md";
+  slug: "my8";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"my88.md": {
+	id: "my88.md";
+  slug: "my88";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"network-attacks.md": {
+	id: "network-attacks.md";
+  slug: "network-attacks";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "ny0.md": {
 	id: "ny0.md";
   slug: "ny0";
@@ -192,6 +269,20 @@ declare module 'astro:content' {
 "pocketbase-javascript-sdk.md": {
 	id: "pocketbase-javascript-sdk.md";
   slug: "pocketbase-javascript-sdk";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"q3-lab2.md": {
+	id: "q3-lab2.md";
+  slug: "q3-lab2";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"w3s-cybersecurity.md": {
+	id: "w3s-cybersecurity.md";
+  slug: "w3s-cybersecurity";
   body: string;
   collection: "blog";
   data: any

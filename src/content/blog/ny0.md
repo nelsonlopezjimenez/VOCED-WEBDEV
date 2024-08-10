@@ -1,6 +1,7 @@
 ---
 title: Ny0
 date: 5/17/2024
+myData: ny0
 ---
 ## Content
 

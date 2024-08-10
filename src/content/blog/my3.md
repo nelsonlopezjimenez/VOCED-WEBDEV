@@ -1,6 +1,7 @@
 ---
 title: Module 3
 date: 5/3/2024
+myData: 3 my3
 ---
 
 We build a pretty cool site with a homepage built using a component-based approach.

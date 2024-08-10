@@ -1,0 +1,806 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>1f-highest</title>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html {
+  font-family: 'Arial';
+}
+
+body {
+  color: #333;
+  font-weight: 100;
+  max-width: 95%;
+  margin: 0 1em;
+}
+
+div:focus {
+  outline: none;
+}
+
+#heading {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding-top: .5em;
+}
+
+#content {
+  padding-top: .5em;
+  font-size: 1em;
+}
+
+.box0 {
+  vertical-align: text-top;
+  cursor: text;
+  display: inline-block;
+  font-size: 1.1em;
+  border: 1px inset #aaa;
+  width: 95%;
+  margin: 1px;
+  padding: 2px;
+  min-height: 1em;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  resize: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.box1 {
+  display:inline-block;
+  width: 90%;
+  vertical-align:top;
+}
+
+.box2 {
+  cursor: text;
+  display:inline-block;
+  font-size: 1.1em;
+  border: 1px inset #aaa;
+  width: 95%;
+  margin: 1px;
+  padding: 2px;
+  min-height: 1em;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  resize: none;
+}
+
+.buttonactive {
+  appearance: push-button !important;
+  background-color: SkyBlue;
+}
+</style>
+<script id="mainscript" language="JavaScript" type="text/javascript"><!--
+var idcntr=0;
+var blkid=null;
+var title;
+var values = [];
+var curout = null;
+var evalfn = eval;
+
+
+function pagestartup() {
+  title = decodeURIComponent(document.URL.match(/\/([^\.\/]*)[^\/]*$/)[1]) || 'JS';
+  document.getElementById('heading').innerHTML = title;
+  document.getElementsByTagName("title")[0].innerHTML = title;
+
+  idcntr = 0;
+  while (true) {
+    b = document.getElementById("b"+idcntr);
+    if (b === null) { break; }
+    blk_resizing(b);
+    idcntr++;
+  }
+  document.getElementById("downloader").href = "missing";
+  document.getElementById("downloader").download = "missing";
+}
+
+function textarearesize(ta) {
+  var h,a,y,ny;
+  y = window.pageYOffset;
+  ta.style.height = 'auto';
+  h = ta.scrollHeight;
+  h -= 4; // twice the padding
+  ta.style.height = h+'px';
+  ny = window.pageYOffset;
+  if (ny < y-40 || y+40 < ny) { // no big jumps
+    window.scrollTo(window.pageXoffset,y);
+    setTimeout(function(){ window.scrollTo(window.pageXoffset,y); },60);
+  }
+}
+
+function blkresize(b) {
+  var d,e;
+  d = b.childNodes[1];
+  if (6<=d.childNodes.length) {
+    e = d.childNodes[5];
+    if ("TEXTAREA" === e.nodeName) { textarearesize(e); }
+    if (1<=d.childNodes[6].childNodes.length) {
+      e = d.childNodes[6].childNodes[0];
+      if ("TEXTAREA" === e.nodeName) { textarearesize(e); }
+    }
+  }
+}
+
+function textarea_resizing(ta) {
+  function resize () {
+    textarearesize(ta);
+  }
+  function delayedResize () {
+    window.setTimeout(resize, 0);
+  }
+  ta.addEventListener('change',resize,false);
+  ta.addEventListener('cut',delayedResize,false);
+  ta.addEventListener('paste',delayedResize,false);
+  ta.addEventListener('drop',delayedResize,false);
+  ta.addEventListener('keydown',delayedResize,false);
+  textarearesize(ta);
+}
+
+function blk_resizing(b) {
+  var d,e;
+  d = b.childNodes[1];
+  if (6<=d.childNodes.length) {
+    e = d.childNodes[5];
+    if ("TEXTAREA" === e.nodeName) { textarea_resizing(e); }
+    if (1<=d.childNodes[6].childNodes.length) {
+      e = d.childNodes[6].childNodes[0];
+      if ("TEXTAREA" === e.nodeName) { textarea_resizing(e); }
+    }
+  }
+}
+
+function clear_content(ev,th) {
+  idcntr = 0;
+  blkid = null;
+  values = [];
+  document.getElementById('content').innerHTML = "";
+}
+
+function toggle_rw(ev,th) {
+  var c;
+  c = document.getElementById('content');
+  if ("true" === c.contentEditable) {
+    c.contentEditable = false;
+    document.getElementById('RORW').value = "RO>RW";
+  } else {
+    c.contentEditable = true;
+    document.getElementById('RORW').value = "RW>RO";
+  }
+}
+
+function add_block(ev,th) {
+  var txt,d,c,idnum,x;
+  c = document.getElementById('content');
+  idnum = idcntr;
+  idcntr++;
+txt = '['+idnum+']:&nbsp;<span class="box1">\
+<input type="button" value="go" onclick="button_flash(go_block,event,this);" class="">\
+<input type="button" value="txt" onclick="show_block(event,this);">\
+<input type="button" value="clr" onclick="clr_block(event,this);">\
+<input type="button" value="-" onclick="vis_block(event,this);"><br>\
+<textarea id="b'+idnum+'_in" class="box0" rows=1 cols=110></textarea>\
+<div></div></span>';
+  d = document.createElement("DIV");
+  d.id = "b"+idnum;
+  d.innerHTML = txt;
+  c.appendChild(d);
+  x=document.createElement("P");
+  x.style = "margin: .75em";
+  c.appendChild(x);
+  values[idnum] = undefined;
+  blk_resizing(d);
+  d.childNodes[1].childNodes[5].focus();
+  return undefined;
+}
+
+function deletelast_block(ev,th) {
+  var d,gid,aid;
+  d = document.getElementById('content');
+  if (null === d.lastChild) { return; }
+  idcntr--;
+  gid = "b"+idcntr;
+  while (1) {
+    aid = d.lastChild.id;
+    d.removeChild(d.lastChild);
+    if (gid === aid) { break; }
+  }
+  values[idcntr] = undefined;
+}
+
+function put(s) {
+  if (null === curout) {
+    console.log(s);
+  } else {
+    curout.value += s;
+    textarearesize(curout);
+  }
+  return s;
+}
+
+function eval_script(scr) {
+  var val,errmsg;
+  try {
+    val = evalfn(scr);
+  } catch (errmsg) {
+    val = "Error: " + errmsg;
+  }
+  return val;
+}
+
+function eval_block(blk) {
+  var scr,val,e,x,b,d;
+  scr = blk.childNodes[1].childNodes[5].value;
+  blkid = blk.id;
+  d = blk.childNodes[1].childNodes[6];
+  if (1<=d.childNodes.length && d.childNodes[0].id === undefined) {
+    d.innerHTML = "";
+  }
+  if (d.childNodes.length<1) {
+    x = document.createElement("TEXTAREA");
+    x.id = blkid + "_val";
+    x.className = "box2";
+    x.rows = 1;
+    x.cols = 110;
+    d.appendChild(x);
+    textarea_resizing(x);
+  } else {
+    x = d.childNodes[0];
+  }
+  x.value = "";
+  textarearesize(x)
+  curout = x;
+  val = eval_script(scr);
+  x.value += val;
+  textarearesize(x)
+  b = +(blkid.replace(/^b/,""));
+  values[b] = val;
+  return undefined;
+}
+
+function button_flash(fn,ev,th) {
+  th.className = "buttonactive";
+  setTimeout(function() { fn(ev,th); }, 20);
+}
+
+function button_active(th) { th.className = "buttonactive"; }
+function button_reset(th) { th.className = ""; }
+
+function go_block(ev,th) {
+  var blk,txt,d;
+  blk = th.parentNode.parentNode;
+  eval_block(blk);
+  button_reset(th);
+}
+
+function golast_block(ev,th) {
+  var blk,txt,d;
+  blk = document.getElementById("b"+(idcntr-1));
+  if (null === blk) {
+    button_reset(th);
+    return;
+  }
+  eval_block(blk);
+  button_reset(th);
+}
+
+function goadd_block(ev,th) {
+  golast_block(ev,th);
+  add_block(ev,th);
+}
+
+function show_block(ev,th) {
+  var txt,d;
+  txt = th.parentNode.childNodes[5].value;
+  d = th.parentNode.childNodes[6];
+  d.innerHTML = txt;
+  return undefined;
+}
+
+function clr_block(ev,th) {
+  var t,d,x,p;
+  d = th.parentNode.childNodes[6];
+  if (1<=d.childNodes.length && (d.childNodes[0].id === "" || d.childNodes[0].id === undefined)) {
+    d.innerHTML = "";
+  }
+  if (d.childNodes.length<1) {
+    x = document.createElement("TEXTAREA");
+    x.id = blkid + "_val";
+    x.className = "box2";
+    x.rows = 1;
+    x.cols = 110;
+    d.appendChild(x);
+  } else {
+    x = d.childNodes[0];
+  }
+  x.value = "";
+  textarearesize(x);
+  p = th.parentNode;
+  t = p.childNodes[5];
+  t.className = "box0";
+  p.childNodes[0].className = "";
+  p.childNodes[1].className = "";
+  p.childNodes[2].className = "";
+  p.childNodes[3].value = "-";
+}
+
+function vis_block(ev,th) {
+  var t,p;
+  p = th.parentNode;
+  t = p.childNodes[5];
+  if ("box0" === t.className) {
+    t.className = "hidden";
+    p.childNodes[0].className = "hidden";
+    p.childNodes[1].className = "hidden";
+    p.childNodes[2].className = "hidden";
+    p.childNodes[3].value = "+";
+  } else {
+    t.className = "box0";
+    p.childNodes[0].className = "";
+    p.childNodes[1].className = "";
+    p.childNodes[2].className = "";
+    p.childNodes[3].value = "-";
+  }
+  blkresize(p.parentNode);
+}
+
+function str(n) {
+  var e;
+  e = document.getElementById("b"+n+"_val");
+  if (null === e) {
+    e = document.getElementById("b"+n);
+    if (null === e) {
+      return "";
+    } else {
+      return e.childNodes[1].childNodes[5].value;
+    }
+  } else {
+    return e.value;
+  }
+}
+
+function res(n) {
+  var e,v;
+  if (undefined === values[n]) {
+    e = document.getElementById("b"+n+"_val");
+    if (null === e) {
+      return "";
+    } else {
+      v = e.value;
+    }
+    if ("" !== v) {
+      if (isNaN(+v)) {
+        return v;
+      }
+      else {
+        return +v;
+      }
+    } else {
+      return "";
+    }
+  }
+  return values[n];
+}
+
+function expr(n) {
+  var e;
+  e = document.getElementById("b"+n);
+  if (null === e) {
+    return ""
+  } else {
+    return e.childNodes[1].childNodes[5].value;
+  }
+}
+
+function last() {
+  var b;
+  if (null === blkid) { return null; }
+  b = blkid.replace(/^b/,"");
+  return res(b-1);
+}
+
+function final() {
+  return values[idcntr-1];
+}
+
+function store_content(ev,th) {
+  var fn,p,save_link,b;
+  update_all();
+  save_link = document.getElementById("downloader");
+  if ("missing" !== save_link.href) {
+    window.URL.revokeObjectURL(save_link.href);
+    save_link.href = "missing";
+  }
+  save_link.download = "missing";
+  fn = document.URL.match(/\/([^\/]*)$/)[1];
+  b = window.document.documentElement.outerHTML;
+  p = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"\n    "http://www.w3.org/TR/html4/strict.dtd">\n' + b;
+  p = p.replace(/\n\n\n+<\/body><\/html>/,"\n\n</body></html>");
+  blob = new Blob([String.fromCharCode(0xFEFF),p],{type: "text/html;charset=" + document.characterSet});
+  save_link.href = window.URL.createObjectURL(blob);
+  save_link.download = fn;
+}
+
+function write_doc(txt) {
+  var b;
+  document.open();
+  document.write(txt);
+  document.close();
+  idcntr = 0;
+  while (true) {
+    b = document.getElementById("b"+idcntr);
+    if (b === null) { break; }
+    blk_resizing(b);
+    idcntr++;
+  }
+  blkid = null;
+  values = [];
+}
+
+function restore_content(ev,th) {
+  var rdr
+  if (undefined === window.blob) return;
+  rdr = new FileReader();
+  rdr.addEventListener("loadend",function(e) { write_doc(e.srcElement.result) });
+  rdr.readAsText(blob);
+}
+
+function do_all(ev,th) {
+  var blk,txt,d,index,v;
+  for (index=0; index<idcntr; index++) {
+    blk = document.getElementById("b"+index);
+    if (null === blk) { continue; }
+    d = blk.childNodes[1].childNodes[5];
+    txt = d.value;
+    v = document.getElementById("b"+index+"_val");
+    if (! txt.match(/^</) || (null != v && "TEXTAREA" === v.nodeName)) {
+      eval_block(blk);
+    } else {
+      d.parentNode.childNodes[6].innerHTML = txt;
+    }
+  }
+  button_reset(th);
+}
+
+function update_all() {
+  var blk,d,index,v;
+  for (index=0; index<idcntr; index++) {
+    blk = document.getElementById("b"+index);
+    if (null === blk) { continue; }
+    d = blk.childNodes[1].childNodes[5];
+    d.textContent = d.value;
+    v = document.getElementById("b"+index+"_val");
+    if (null != v && "TEXTAREA" === v.nodeName) {
+      v.textContent = v.value;
+    }
+  }
+}
+--></script>
+</head>
+<body>
+
+<span id="heading" style="display:inline-block;margin-bottom: .5em;">1f-highest</span>
+
+<span style="display:inline-block;float:right;margin-top: .8em;">
+<input id="RORW" type="button" value="RW>RO" onclick="toggle_rw(event,this);">
+<input type="button" value="clear" onclick="clear_content(event,this);">
+<input type="button" value="store" onclick="store_content(event,this);">
+<input type="button" value="restore" onclick="restore_content(event,this);">
+<a id="downloader" href="missing" download="missing" target="_blank"><input type="button" value="save" onclick="store_content(event,this);"></a>
+</span>
+<br>
+
+<input type="button" value="add" onclick="add_block(event,this);" style="margin-top: .8em; margin-bottom: .5em;">
+
+<div id="content" contenteditable="true"><div id="b0">[0]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b0_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;style&gt;
+p { background-color:#bbb; font-size:18px; }
+&lt;/style&gt;
+&lt;h1&gt;JavaScript Programming Using Notebook Concept&lt;/h1&gt;</textarea><div><style>
+p { background-color:#bbb; font-size:18px; }
+</style>
+<h1>JavaScript Programming Using Notebook Concept</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b1">[1]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b1_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h2&gt;What is a notebook?&lt;/h2&gt;</textarea><div><h2>What is a notebook?</h2></div></span></div><p style="margin: 0.75em;"></p><div id="b2">[2]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b2_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;p&gt;It is a web &lt;b&gt;application&lt;/b&gt; that allows you to create and share documents that contain live code, equations, visualizations and narrative text&lt;/p&gt;
+&lt;p&gt;It is a browser-based REPL containing an ordered list of input/output cells which can contain code, text, mathematics, plots, and rich media. &lt;/p&gt;</textarea><div>
+<p>It is a web <b>application</b> that allows you to create and share documents that contain live code, equations, visualizations and narrative text</p>
+<p>It is a browser-based REPL containing an ordered list of input/output cells which can contain code, text, mathematics, plots, and rich media. </p></div></span></div><p style="margin: 0.75em;"></p><div id="b3">[3]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b3_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h2&gt;Use:&lt;/h2&gt;
+&lt;p&gt;Document is divided into cells in input/output order&lt;/p&gt;
+&lt;p&gt;Input cell: enter either HTML or javascript code and hit the "button" txt to run HTML or "go" to execute javascript code. &lt;/p&gt;&lt;p&gt;Use the "clr" button to clear the output&lt;/p&gt;</textarea><div><h2>Use:</h2>
+<p>Document is divided into cells in input/output order</p>
+<p>Input cell: enter either HTML or javascript code and hit the "button" txt to run HTML or "go" to execute javascript code. </p><p>Use the "clr" button to clear the output</p></div></span></div><p style="margin: 0.75em;"></p><div id="b4">[4]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b4_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h2&gt;Let's start with HTML code&lt;/h2&gt;
+&lt;ol&gt;&lt;li&gt;You can configure global style properties in the first cell&lt;/li&gt;
+&lt;li&gt;You can add in-line properties if needed&lt;/li&gt;
+&lt;li&gt;Practice with as much HTML tags as possible: add images, videos, sound, etc&lt;/li&gt;&lt;/ol&gt;</textarea><div><h2>Let's start with HTML code</h2>
+<ol><li>You can configure global style properties in the first cell</li>
+<li>You can add in-line properties if needed</li>
+<li>Practice with as much HTML tags as possible: add images, videos, sound, etc</li></ol></div></span></div><p style="margin: 0.75em;"></p><div id="b5">[5]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class=""><input type="button" value="txt" onclick="show_block(event,this);" class=""><input type="button" value="clr" onclick="clr_block(event,this);" class=""><input type="button" value="-" onclick="vis_block(event,this);"><br><textarea id="b5_in" class="box0" rows="1" cols="110" style="height: 304px;">&lt;h1&gt;JavaScript Fundamentals&lt;/h1&gt;
+&lt;h1&gt;Math.max()&lt;/h1&gt;
+
+&lt;h4&gt;Write a function called **max,** which accepts an array and returns the highest value.
+
+&lt;/h4&gt;&lt;h4&gt;Do not use the built-in `Math.max()` function!
+
+&lt;/h4&gt;&lt;h4&gt;Examples:
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;max([5, 1, 4, 7, 1, 2]); // 7
+&lt;/li&gt;&lt;li&gt;max([3, 4, 12, 1, 8]); // 12
+&lt;/li&gt;&lt;li&gt;max([-1, 6, 3, 2.2, -10, -4]); // 6
+&lt;/li&gt;&lt;/ul&gt;
+&lt;h1&gt;Algorithm&lt;/h1&gt;
+&lt;ul&gt;&lt;li&gt;have a container for the highest value initialized to the lowest possible value in case of negative numbers&lt;/li
+&lt;li&gt;start the loop&lt;/li&gt;
+&lt;li&gt;if the item at index is larger than highest, assign to highest the content of item&lt;/li&gt;
+&lt;li&gt;finish loop&lt;/li&gt;
+&lt;li&gt;return the content of highest variable&lt;/li&gt;&lt;/ul&gt;</textarea><div><h1>JavaScript Fundamentals</h1>
+<h1>Math.max()</h1>
+
+<h4>Write a function called **max,** which accepts an array and returns the highest value.
+
+</h4><h4>Do not use the built-in `Math.max()` function!
+
+</h4><h4>Examples:
+</h4><ul>
+<li>max([5, 1, 4, 7, 1, 2]); // 7
+</li><li>max([3, 4, 12, 1, 8]); // 12
+</li><li>max([-1, 6, 3, 2.2, -10, -4]); // 6
+</li></ul>
+<h1>Algorithm</h1>
+<ul><li>have a container for the highest value initialized to the lowest possible value in case of negative numbers</li>start the loop
+<li>if the item at index is larger than highest, assign to highest the content of item</li>
+<li>finish loop</li>
+<li>return the content of highest variable</li></ul></div></span></div><p style="margin: 0.75em;"></p><div id="b6">[6]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b6_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;ul&gt;
+&lt;li&gt;Array.sort()
+&lt;/li&gt;&lt;li&gt;Math.max()
+&lt;/li&gt;&lt;li&gt;custom max()
+&lt;/li&gt;&lt;/ul&gt;</textarea><div><ul>
+<li>Array.sort()
+</li><li>Math.max()
+</li><li>custom max()
+</li></ul></div></span></div><p style="margin: 0.75em;"></p><div id="b7">[7]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class=""><input type="button" value="txt" onclick="show_block(event,this);" class=""><input type="button" value="clr" onclick="clr_block(event,this);" class=""><input type="button" value="-" onclick="vis_block(event,this);"><br><textarea id="b7_in" class="box0" rows="1" cols="110" style="height: 112px;">// using sort()
+function max(arr){
+   return arr.sort()
+}
+
+max([-1, 6, 3, 2.2, -10, -4]); // 6
+//max(['a','b','c','z','a','f','t','a'])</textarea><div><textarea id="b7_val" class="box2" rows="1" cols="110" style="height: 16px;">-1,-10,-4,2.2,3,6</textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b8">[8]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class=""><input type="button" value="txt" onclick="show_block(event,this);" class=""><input type="button" value="clr" onclick="clr_block(event,this);" class=""><input type="button" value="-" onclick="vis_block(event,this);"><br><textarea id="b8_in" class="box0" rows="1" cols="110" style="height: 96px;">// using Math.max()
+function max(arr){
+   return Math.max(...arr)
+}
+
+max([-1, 6, 3, 2.2, -10, -4]); // 6</textarea><div><textarea id="null_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b9">[9]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class=""><input type="button" value="txt" onclick="show_block(event,this);" class=""><input type="button" value="clr" onclick="clr_block(event,this);" class=""><input type="button" value="-" onclick="vis_block(event,this);"><br><textarea id="b9_in" class="box0" rows="1" cols="110" style="height: 176px;">// custom max(array)
+function max(arr){
+   let highest = -Infinity;
+   for (let i = 0; i &lt; arr.length; i++){
+      if (arr[i] &gt; highest){
+         highest = arr[i];
+      }
+   }
+   return highest;
+}
+max([-1, 6, 3, 2.2, -10, -4]); // 6</textarea><div><textarea id="b9_val" class="box2" rows="1" cols="110" style="height: 16px;">6</textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b10">[10]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class=""><input type="button" value="txt" onclick="show_block(event,this);" class=""><input type="button" value="clr" onclick="clr_block(event,this);" class=""><input type="button" value="-" onclick="vis_block(event,this);"><br><textarea id="b10_in" class="box0" rows="1" cols="110" style="height: 416px;">&lt;h1&gt;twoHighest()&lt;/h1&gt;
+&lt;h4&gt;Write a function called **twoHighest** that takes an array of numbers as its argument and returns the **two highest numbers within the array**.
+
+&lt;/h4&gt;&lt;h4&gt;The returned value should be an array in the following format: `[secondHighest, highest]`
+
+&lt;/h4&gt;&lt;h4&gt;The order of the numbers passed in could be any order.
+
+&lt;/h4&gt;&lt;h4&gt;**Do not use the build in sort() method - the tests will fail!**
+
+&lt;/h4&gt;&lt;h4&gt;Examples:
+
+&lt;ul&gt;&lt;li&gt;
+twoHighest([1, 2, 10, 8]); // [8, 10]
+&lt;/li&gt;&lt;li&gt;twoHighest([6, 1, 9, 10, 4]); // [9,10]
+&lt;/li&gt;&lt;li&gt;twoHighest([4, 25, 3, 20, 19, 5]); // [20,25]
+&lt;/li&gt;&lt;li&gt;twoHighest([1, 2, 2]) // [2, 2];
+&lt;/li&gt;&lt;/ul&gt;
+&lt;h1&gt;Algorithm&lt;/h1&gt;
+&lt;ul&gt;&lt;li&gt;have containers for both highest and secondHighest values initialized to the lowest possible value in case of negative numbers&lt;/li
+&lt;li&gt;start the loop&lt;/li&gt;
+&lt;li&gt;if the item at index is larger than highest, assign to highest the content of item, swap values&lt;/li&gt;
+&lt;li&gt;if the item at index is not larger than highest, check if item is larger than secondHighest, swap values&lt;/li&gt;
+&lt;li&gt;if item at index is not larger than highest, nor larger than secondHighest, do nothing&lt;/li&gt;
+&lt;li&gt;finish loop&lt;/li&gt;
+&lt;li&gt;return an array with secondHighest as first element, and highest as a second element&lt;/li&gt;&lt;/ul&gt;
+</textarea><div><h1>twoHighest()</h1>
+<h4>Write a function called **twoHighest** that takes an array of numbers as its argument and returns the **two highest numbers within the array**.
+
+</h4><h4>The returned value should be an array in the following format: `[secondHighest, highest]`
+
+</h4><h4>The order of the numbers passed in could be any order.
+
+</h4><h4>**Do not use the build in sort() method - the tests will fail!**
+
+</h4><h4>Examples:
+
+<ul><li>
+twoHighest([1, 2, 10, 8]); // [8, 10]
+</li><li>twoHighest([6, 1, 9, 10, 4]); // [9,10]
+</li><li>twoHighest([4, 25, 3, 20, 19, 5]); // [20,25]
+</li><li>twoHighest([1, 2, 2]) // [2, 2];
+</li></ul>
+</h4><h1>Algorithm</h1>
+<ul><li>have containers for both highest and secondHighest values initialized to the lowest possible value in case of negative numbers</li>start the loop
+<li>if the item at index is larger than highest, assign to highest the content of item, swap values</li>
+<li>if the item at index is not larger than highest, check if item is larger than secondHighest, swap values</li>
+<li>if item at index is not larger than highest, nor larger than secondHighest, do nothing</li>
+<li>finish loop</li>
+<li>return an array with secondHighest as first element, and highest as a second element</li></ul>
+</div></span></div><p style="margin: 0.75em;"></p><div id="b11">[11]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class=""><input type="button" value="txt" onclick="show_block(event,this);" class=""><input type="button" value="clr" onclick="clr_block(event,this);" class=""><input type="button" value="-" onclick="vis_block(event,this);"><br><textarea id="b11_in" class="box0" rows="1" cols="110" style="height: 80px;">// using sort()
+
+//twoHighest([4, 25, 3, 20, 19, 5]); // [20,25]
+[4, 25, 3, 20, 19, 5].sort(); 
+['a','b','c','z','a','f','t','a'].sort()</textarea><div><textarea id="b8_val" class="box2" rows="1" cols="110" style="height: 16px;">a,a,a,b,c,f,t,z</textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b12">[12]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b12_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;How to render a list in React&lt;/h1&gt;</textarea><div><h1>How to render a list in React</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b13">[13]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b13_in" class="hidden" rows="1" cols="110" style="height: auto;">// Math.max(...[])
+const arr = [1, 2, 3];
+function usingSpreadSyntax(arr){
+   return Math.max(...arr);
+}
+usingSpreadSyntax(arr)
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax</textarea><div><textarea id="b12_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b14">[14]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class=""><input type="button" value="txt" onclick="show_block(event,this);" class=""><input type="button" value="clr" onclick="clr_block(event,this);" class=""><input type="button" value="-" onclick="vis_block(event,this);"><br><textarea id="b14_in" class="box0" rows="1" cols="110" style="height: 288px;"> twoHighest
+
+Write a function called **twoHighest** that takes an array of numbers as its argument and returns the **two highest numbers within the array**.
+
+The returned value should be an array in the following format: `[secondHighest, highest]`
+
+The order of the numbers passed in could be any order.
+
+**Do not use the build in sort() method - the tests will fail!**
+
+Examples:
+
+```js
+twoHighest([1, 2, 10, 8]); // [8, 10]
+twoHighest([6, 1, 9, 10, 4]); // [9,10]
+twoHighest([4, 25, 3, 20, 19, 5]); // [20,25]
+twoHighest([1, 2, 2]) // [2, 2];
+```</textarea><div> twoHighest
+
+Write a function called **twoHighest** that takes an array of numbers as its argument and returns the **two highest numbers within the array**.
+
+The returned value should be an array in the following format: `[secondHighest, highest]`
+
+The order of the numbers passed in could be any order.
+
+**Do not use the build in sort() method - the tests will fail!**
+
+Examples:
+
+```js
+twoHighest([1, 2, 10, 8]); // [8, 10]
+twoHighest([6, 1, 9, 10, 4]); // [9,10]
+twoHighest([4, 25, 3, 20, 19, 5]); // [20,25]
+twoHighest([1, 2, 2]) // [2, 2];
+```</div></span></div><p style="margin: 0.75em;"></p><div id="b15">[15]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b15_in" class="hidden" rows="1" cols="110" style="height: auto;">// using more concise arrow function with implicit return
+import React from 'react';
+
+const App = () =&gt; {
+  var users = [
+    { name: 'Robin' },
+    { name: 'Markus' },
+  ];
+
+  return (
+    &lt;ul&gt;
+      {users.map(user =&gt; &lt;li&gt;{user.name}&lt;/li&gt;)}
+    &lt;/ul&gt;
+  );
+}
+
+export default App;</textarea><div><textarea id="b8_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b16">[16]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b16_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;Using map method&lt;/h1&gt;
+&lt;p&gt;It makes sense to map over an array and return the rendered output for each item.&lt;/p&gt;
+&lt;p&gt;The same can be applied for custom tailored cases using filter() or reduce() methods</textarea><div><h1>Using map method</h1>
+<p>It makes sense to map over an array and return the rendered output for each item.</p>
+<p>The same can be applied for custom tailored cases using filter() or reduce() methods</p></div></span></div><p style="margin: 0.75em;"></p><div id="b17">[17]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b17_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;filter()&lt;/h1&gt;</textarea><div><h1>filter()</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b18">[18]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b18_in" class="hidden" rows="1" cols="110" style="height: auto;">import React from 'react';
+
+const App = () =&gt; {
+  var users = [
+    { name: 'Robin', isDeveloper: true },
+    { name: 'Markus', isDeveloper: false },
+  ];
+
+  return (
+    &lt;ul&gt;
+      {users
+        .filter(user =&gt; user.isDeveloper)
+        .map(user =&gt; &lt;li&gt;{user.name}&lt;/li&gt;)
+      }
+    &lt;/ul&gt;
+  );
+};
+
+export default App;</textarea><div><textarea id="b18_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b19">[19]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class=""><input type="button" value="txt" onclick="show_block(event,this);" class=""><input type="button" value="clr" onclick="clr_block(event,this);" class=""><input type="button" value="-" onclick="vis_block(event,this);"><br><textarea id="b19_in" class="box0" rows="1" cols="110" style="height: 16px;">&lt;h1&gt;Ternary Operator&lt;/h1&gt;</textarea><div><h1>Ternary Operator</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b20">[20]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b20_in" class="hidden" rows="1" cols="110" style="height: auto;">import React from 'react';
+
+const App = () =&gt; {
+  const users = [
+    { name: 'Robin' },
+    { name: 'Markus' },
+  ];
+
+  const showUsers = false;
+
+  if (!showUsers) {
+    return null;
+  }
+
+  return (
+    &lt;ul&gt;
+      {users.map(user =&gt; &lt;li&gt;{user.name}&lt;/li&gt;)}
+    &lt;/ul&gt;
+  );
+};
+
+export default App;</textarea><div><textarea id="b20_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b21">[21]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b21_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h2&gt;If you want to use an if-else statement within the returned JSX, use ternary operator:&lt;/h2&gt;</textarea><div><h2>If you want to use an if-else statement within the returned JSX, use ternary operator:</h2></div></span></div><p style="margin: 0.75em;"></p><div id="b22">[22]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b22_in" class="hidden" rows="1" cols="110" style="height: auto;">import React from 'react';
+
+const App = () =&gt; {
+  const users = [
+    { name: 'Robin' },
+    { name: 'Markus' },
+  ];
+
+  const showUsers = false;
+
+  return (
+    &lt;div&gt;
+      {showUsers ? (
+        &lt;ul&gt;
+          {users.map(user =&gt; (
+            &lt;li&gt;{user.name}&lt;/li&gt;
+          ))}
+        &lt;/ul&gt;
+      ) : null}
+    &lt;/div&gt;
+  );
+};
+
+export default App;</textarea><div><textarea id="b22_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b23">[23]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b23_in" class="hidden" rows="1" cols="110" style="height: auto;">// or use the &amp;&amp; operator
+import React from 'react';
+
+const App = () =&gt; {
+  const users = [
+    { name: 'Robin' },
+    { name: 'Markus' },
+  ];
+
+  const showUsers = false;
+
+  return (
+    &lt;div&gt;
+      {showUsers &amp;&amp; (
+        &lt;ul&gt;
+          {users.map(user =&gt; (
+            &lt;li&gt;{user.name}&lt;/li&gt;
+          ))}
+        &lt;/ul&gt;
+      )}
+    &lt;/div&gt;
+  );
+};
+
+export default App;</textarea><div><textarea id="b16_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b24">[24]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b24_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;Import/Export syntax in React&lt;/h1&gt;</textarea><div><h1>Import/Export syntax in React</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b25">[25]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b25_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div><textarea id="b16_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b26">[26]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b26_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div><textarea id="b26_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b27">[27]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b27_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div></div></span></div><p style="margin: 0.75em;"></p></div>
+
+<input type="button" value="go last" onclick="button_flash(golast_block,event,this);" class="">
+
+<span style="display:inline-block;width:.2em"></span>
+<input type="button" value="add" onclick="add_block(event,this);">
+
+<span style="display:inline-block;width:.2em"></span>
+<input type="button" value="go-add" onclick="button_flash(goadd_block,event,this);" class="">
+
+<span style="display:inline-block;width: .2em"></span>
+<input type="button" value="go all" onclick="button_flash(do_all,event,this);" class="">
+
+<span style="display:inline-block;width:15%;"></span>
+<input type="button" value="delete" onclick="deletelast_block(event,this);">
+
+<p style="height: 10em"></p>
+
+<script language="JavaScript" type="text/javascript">
+pagestartup();
+--></script>
+
+<div id="extension-ebdbc"></div></body></html>

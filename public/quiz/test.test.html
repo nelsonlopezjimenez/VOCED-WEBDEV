@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- last modified: 8.4.20248.4.2024 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="convert plaintext to multiple choice format questions">
+    <meta name="description" content="programmatically convert plaintext to html">
+    <meta name="author" content="Nelson Lopez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            width: 75%;
+            margin: auto;
+            padding: 3%;
+        }
+
+        .ibpage-problems__item {
+            background-color: rgb(241, 245, 241);
+        }
+
+        .form-check {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 
+    .form-check[data-correct='true'] {
+        background-color: green;
+    }
+
+    .form-check--v2[data-correct='false'] {
+        background-color: rgb(176, 27, 27);
+    } */
+
+        .form-check__icon {
+            display: inline;
+        }
+
+        .make-inv {
+            display: none
+        }
+
+        .make-green {
+            background-color: green;
+            color: white;
+        }
+
+        .make-red {
+            background-color: red;
+            color: white;
+        }
+
+        .make-red-box {
+            border: 3px solid red;
+        }
+    </style>
+    <title>Midterm</title>
+</head>
+
+<body>
+    <section class="ibpage-problems__item" id="______ is a necessary API for every React.js component.">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">0</span>
+            <div>
+                <p>______ is a necessary API for every React.js component..</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=0>
+                <input class="form-check__input " type="radio" name="cxg0" id="cxgrenderComponent" value="1">
+                <label class="form-check__label" for="cxgrenderComponent">
+                    renderComponent
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=0>
+                <input class="form-check__input " type="radio" name="cxg0" id="cxgrender" value="2">
+                <label class="form-check__label" for="cxgrender">
+                    render
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=0>
+                <input class="form-check__input " type="radio" name="cxg0" id="cxgSetinitialComponent" value="3">
+                <label class="form-check__label" for="cxgSetinitialComponent">
+                    SetinitialComponent
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=0>
+                <input class="form-check__input " type="radio" name="cxg0" id="cxgAll of the above" value="4">
+                <label class="form-check__label" for="cxgAll of the above">
+                    All of the above
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item" id="React is mainly used for developing ______.">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">1</span>
+            <div>
+                <p>React is mainly used for developing ______..</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=1>
+                <input class="form-check__input " type="radio" name="cxg1" id="cxgUser interface" value="1">
+                <label class="form-check__label" for="cxgUser interface">
+                    User interface
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=1>
+                <input class="form-check__input " type="radio" name="cxg1" id="cxgConnectivity" value="2">
+                <label class="form-check__label" for="cxgConnectivity">
+                    Connectivity
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=1>
+                <input class="form-check__input " type="radio" name="cxg1" id="cxgDatabase" value="3">
+                <label class="form-check__label" for="cxgDatabase">
+                    Database
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=1>
+                <input class="form-check__input " type="radio" name="cxg1" id="cxgDesign platform" value="4">
+                <label class="form-check__label" for="cxgDesign platform">
+                    Design platform
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item" id="The Keys given to a list of elements in React should be ______.">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">2</span>
+            <div>
+                <p>The Keys given to a list of elements in React should be ______..</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=2>
+                <input class="form-check__input " type="radio" name="cxg2" id="cxgUnique among the siblings only"
+                    value="1">
+                <label class="form-check__label" for="cxgUnique among the siblings only">
+                    Unique among the siblings only
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=2>
+                <input class="form-check__input " type="radio" name="cxg2" id="cxgNot necessarily unique" value="2">
+                <label class="form-check__label" for="cxgNot necessarily unique">
+                    Not necessarily unique
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=2>
+                <input class="form-check__input " type="radio" name="cxg2"
+                    id="cxgUnique in the DOM (Document Object Model)" value="3">
+                <label class="form-check__label" for="cxgUnique in the DOM (Document Object Model)">
+                    Unique in the DOM (Document Object Model)
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=2>
+                <input class="form-check__input " type="radio" name="cxg2" id="cxgNone of the above" value="4">
+                <label class="form-check__label" for="cxgNone of the above">
+                    None of the above
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item"
+        id="The number of elements that can be returned by a valid React component is ______.">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">3</span>
+            <div>
+                <p>The number of elements that can be returned by a valid React component is ______..</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=3>
+                <input class="form-check__input " type="radio" name="cxg3" id="cxg1" value="1">
+                <label class="form-check__label" for="cxg1">
+                    1
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=3>
+                <input class="form-check__input " type="radio" name="cxg3" id="cxg5" value="2">
+                <label class="form-check__label" for="cxg5">
+                    5
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=3>
+                <input class="form-check__input " type="radio" name="cxg3" id="cxg3" value="3">
+                <label class="form-check__label" for="cxg3">
+                    3
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=3>
+                <input class="form-check__input " type="radio" name="cxg3" id="cxg2" value="4">
+                <label class="form-check__label" for="cxg2">
+                    2
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item" id="What are the ReactJS limitations?">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">4</span>
+            <div>
+                <p>What are the ReactJS limitations?.</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=4>
+                <input class="form-check__input " type="radio" name="cxg4" id="cxgAll of these" value="1">
+                <label class="form-check__label" for="cxgAll of these">
+                    All of these
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=4>
+                <input class="form-check__input " type="radio" name="cxg4"
+                    id="cxgReact will use inline templating and JSX which might seem awkward to a few developers"
+                    value="2">
+                <label class="form-check__label"
+                    for="cxgReact will use inline templating and JSX which might seem awkward to a few developers">
+                    React will use inline templating and JSX which might seem awkward to a few developers
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=4>
+                <input class="form-check__input " type="radio" name="cxg4"
+                    id="cxgReactJS is only for the view layer of the application, which means we will make use of other technologies as well for getting complete tooling set for the application development"
+                    value="3">
+                <label class="form-check__label"
+                    for="cxgReactJS is only for the view layer of the application, which means we will make use of other technologies as well for getting complete tooling set for the application development">
+                    ReactJS is only for the view layer of the application, which means we will make use of other
+                    technologies as well for getting complete tooling set for the application development
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=4>
+                <input class="form-check__input " type="radio" name="cxg4" id="cxgThe React library is too large"
+                    value="4">
+                <label class="form-check__label" for="cxgThe React library is too large">
+                    The React library is too large
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item"
+        id="What function will permit for rendering the React content in an HTML page?">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">5</span>
+            <div>
+                <p>What function will permit for rendering the React content in an HTML page?.</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=5>
+                <input class="form-check__input " type="radio" name="cxg5" id="cxgReactDOM.render()" value="1">
+                <label class="form-check__label" for="cxgReactDOM.render()">
+                    ReactDOM.render()
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=5>
+                <input class="form-check__input " type="radio" name="cxg5" id="cxgReact.render()" value="2">
+                <label class="form-check__label" for="cxgReact.render()">
+                    React.render()
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=5>
+                <input class="form-check__input " type="radio" name="cxg5" id="cxgReactDOM.start()" value="3">
+                <label class="form-check__label" for="cxgReactDOM.start()">
+                    ReactDOM.start()
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=5>
+                <input class="form-check__input " type="radio" name="cxg5" id="cxgReact.mount()" value="4">
+                <label class="form-check__label" for="cxgReact.mount()">
+                    React.mount()
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item" id="What is meant by the state in React?">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">6</span>
+            <div>
+                <p>What is meant by the state in React?.</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=6>
+                <input class="form-check__input " type="radio" name="cxg6" id="cxgInternal storage of component"
+                    value="1">
+                <label class="form-check__label" for="cxgInternal storage of component">
+                    Internal storage of component
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=6>
+                <input class="form-check__input " type="radio" name="cxg6" id="cxgExternal storage of component"
+                    value="2">
+                <label class="form-check__label" for="cxgExternal storage of component">
+                    External storage of component
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=6>
+                <input class="form-check__input " type="radio" name="cxg6" id="cxgPermanent storage" value="3">
+                <label class="form-check__label" for="cxgPermanent storage">
+                    Permanent storage
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=6>
+                <input class="form-check__input " type="radio" name="cxg6" id="cxgNone of the above" value="4">
+                <label class="form-check__label" for="cxgNone of the above">
+                    None of the above
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item" id="What is React or ReactJS?">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">7</span>
+            <div>
+                <p>What is React or ReactJS?.</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=7>
+                <input class="form-check__input " type="radio" name="cxg7" id="cxgComponent-based Javascript library"
+                    value="1">
+                <label class="form-check__label" for="cxgComponent-based Javascript library">
+                    Component-based Javascript library
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=7>
+                <input class="form-check__input " type="radio" name="cxg7" id="cxgJavascript framework" value="2">
+                <label class="form-check__label" for="cxgJavascript framework">
+                    Javascript framework
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=7>
+                <input class="form-check__input " type="radio" name="cxg7" id="cxgJavascript file" value="3">
+                <label class="form-check__label" for="cxgJavascript file">
+                    Javascript file
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=7>
+                <input class="form-check__input " type="radio" name="cxg7" id="cxgNone of the above" value="4">
+                <label class="form-check__label" for="cxgNone of the above">
+                    None of the above
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item"
+        id="What is the declarative approach for rendering a dynamic list of components depending on array values?">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">8</span>
+            <div>
+                <p>What is the declarative approach for rendering a dynamic list of components depending on array
+                    values?.</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=8>
+                <input class="form-check__input " type="radio" name="cxg8" id="cxgUsing Array.map() method" value="1">
+                <label class="form-check__label" for="cxgUsing Array.map() method">
+                    Using Array.map() method
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=8>
+                <input class="form-check__input " type="radio" name="cxg8" id="cxgUsing &lt;Each/> component" value="2">
+                <label class="form-check__label" for="cxgUsing &lt;Each/> component">
+                    Using &lt;Each/> component
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=8>
+                <input class="form-check__input " type="radio" name="cxg8" id="cxgUsing reduce array method" value="3">
+                <label class="form-check__label" for="cxgUsing reduce array method">
+                    Using reduce array method
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=8>
+                <input class="form-check__input " type="radio" name="cxg8" id="cxgUsing for or while loop" value="4">
+                <label class="form-check__label" for="cxgUsing for or while loop">
+                    Using for or while loop
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item" id="What is the usage of setState?">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">9</span>
+            <div>
+                <p>What is the usage of setState?.</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=9>
+                <input class="form-check__input " type="radio" name="cxg9"
+                    id="cxgInvoking the code after the setState operation is performed" value="1">
+                <label class="form-check__label" for="cxgInvoking the code after the setState operation is performed">
+                    Invoking the code after the setState operation is performed
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=9>
+                <input class="form-check__input " type="radio" name="cxg9"
+                    id="cxgReplacing the state fully instead of the default merge action" value="2">
+                <label class="form-check__label" for="cxgReplacing the state fully instead of the default merge action">
+                    Replacing the state fully instead of the default merge action
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=9>
+                <input class="form-check__input " type="radio" name="cxg9"
+                    id="cxgAccessing the earlier state before the setState operation" value="3">
+                <label class="form-check__label" for="cxgAccessing the earlier state before the setState operation">
+                    Accessing the earlier state before the setState operation
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=9>
+                <input class="form-check__input " type="radio" name="cxg9" id="cxgNone of these" value="4">
+                <label class="form-check__label" for="cxgNone of these">
+                    None of these
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item" id="What is used for passing the data to a component from outside?">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">10</span>
+            <div>
+                <p>What is used for passing the data to a component from outside?.</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=10>
+                <input class="form-check__input " type="radio" name="cxg10" id="cxgprops" value="1">
+                <label class="form-check__label" for="cxgprops">
+                    props
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=10>
+                <input class="form-check__input " type="radio" name="cxg10" id="cxgRender with arguments" value="2">
+                <label class="form-check__label" for="cxgRender with arguments">
+                    Render with arguments
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=10>
+                <input class="form-check__input " type="radio" name="cxg10" id="cxgsetState" value="3">
+                <label class="form-check__label" for="cxgsetState">
+                    setState
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=10>
+                <input class="form-check__input " type="radio" name="cxg10" id="cxgPropTypes" value="4">
+                <label class="form-check__label" for="cxgPropTypes">
+                    PropTypes
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item" id="Which command can be used for the creation of React app?">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">11</span>
+            <div>
+                <p>Which command can be used for the creation of React app?.</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=11>
+                <input class="form-check__input " type="radio" name="cxg11" id="cxgnpm install create-react-app"
+                    value="1">
+                <label class="form-check__label" for="cxgnpm install create-react-app">
+                    npm install create-react-app
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=11>
+                <input class="form-check__input " type="radio" name="cxg11" id="cxginstall -g create-react-app"
+                    value="2">
+                <label class="form-check__label" for="cxginstall -g create-react-app">
+                    install -g create-react-app
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=11>
+                <input class="form-check__input " type="radio" name="cxg11" id="cxgnpm install -g create-react-app"
+                    value="3">
+                <label class="form-check__label" for="cxgnpm install -g create-react-app">
+                    npm install -g create-react-app
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=11>
+                <input class="form-check__input " type="radio" name="cxg11" id="cxgNone of the above" value="4">
+                <label class="form-check__label" for="cxgNone of the above">
+                    None of the above
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+    <section class="ibpage-problems__item" id="Which of the following comes under the advantages of React?">
+        <div class="ibpage-problems__header">
+            <span class="m-r-5 h3">12</span>
+            <div>
+                <p>Which of the following comes under the advantages of React?.</p>
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="true" data-problem-index=12>
+                <input class="form-check__input " type="radio" name="cxg12"
+                    id="cxgIntegration with other frameworks (like BackboneJS, Angular, etc.) becomes easier because it is only a view library"
+                    value="1">
+                <label class="form-check__label"
+                    for="cxgIntegration with other frameworks (like BackboneJS, Angular, etc.) becomes easier because it is only a view library">
+                    Integration with other frameworks (like BackboneJS, Angular, etc.) becomes easier because it is only
+                    a view library
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=12>
+                <input class="form-check__input " type="radio" name="cxg12"
+                    id="cxgIncreases the performance of an application using Virtual DOM" value="2">
+                <label class="form-check__label" for="cxgIncreases the performance of an application using Virtual DOM">
+                    Increases the performance of an application using Virtual DOM
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=12>
+                <input class="form-check__input " type="radio" name="cxg12"
+                    id="cxgCan render both on server and client side" value="3">
+                <label class="form-check__label" for="cxgCan render both on server and client side">
+                    Can render both on server and client side
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+        <div class="ibpage-problems__options">
+            <div class="form-check" data-correct="false" data-problem-index=12>
+                <input class="form-check__input " type="radio" name="cxg12" id="cxgAll of the above" value="4">
+                <label class="form-check__label" for="cxgAll of the above">
+                    All of the above
+                </label>
+                <img class="form-check__icon form-check__icon--success" src="green-check-99d545.svg" />
+                <img class="form-check__icon form-check__icon--error" src=" cross-616d53c.svg" />
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let questionSection = document.querySelectorAll('.ibpage-problems__item');
+        let myRadio = document.querySelectorAll('input');
+        let myImg = document.querySelectorAll('img');
+        let mySection = document.querySelectorAll('section');
+
+        function handleClick(e) {
+            if (e.target.value === '1') {
+                console.log('------------1------------')
+                e.target.parentElement.classList.add('make-green');
+
+            }
+            else {
+                e.target.parentElement.classList.add('make-red')
+                console.log('======2 3 4 =======')
+            }
+        }
+
+        function processClick(e) {
+            console.dir(e.target.parentElement)
+            handleClick(e)
+        }
+        function addListener() {
+            for (let i = 0; i < myRadio.length; i++) {
+                myRadio[i].addEventListener('click', e => processClick(e));
+            }
+        }
+        addListener();
+
+
+        function displayEvent1(e) {
+            console.log(e.srcElement);
+            console.log(e.target);
+            if (e.target.value === '1') {
+                console.log('value is 1')
+                e.target.classList.add('make-red')
+            }
+            else {
+                console.log('value is 2-3-4')
+                e.target.style.backgroundColor = 'green'
+            }
+        }
+
+        function selectSection(order) {
+            let mySelection = mySection[order].children; //it is HTML element
+            // console.dir(mySelection);
+            return mySelection;
+        }
+
+        function selectHeader(mySelection) {
+            let header = mySelection[0]
+            let myChildren = header.children
+            let mySpan = myChildren[0].innerHTML;
+            let title = myChildren[1].innerHTML
+            // console.log(`span: ${mySpan} === title: ${title}`)
+            return `${mySpan}\n${title}`
+        }
+
+        function buildThePage() { // NONONONONO not build a processThePage
+            let build = makeHeader("QUIZ-V2", '8.5.2024'); //HEADER
+            for (let i = 0; i < mySection.length; i++) {
+                let numberTitle = selectHeader(selectSection(i))
+                build += `\n${numberTitle}\n`;
+                let first = selectFirsQuestion(selectSection(i));
+                let second = selectQuestion(selectSection(i), 2);
+                let third = selectQuestion(selectSection(i), 3)
+                let fourth = selectQuestion(selectSection(i), 4)
+                build += first + second + third + fourth;
+                // 
+                // selectQuestion(selectSection(0), 3)
+                // selectQuestion(selectSection(0), 4)
+
+            }
+        }
+
+        function selectFirsQuestion(mySelection) {
+            let isCorrect = mySelection[1].children[0].getAttribute('data-correct'); //true or false
+            let radioElement = mySelection[1].children[0].children[0];
+            // mySelection[1].children[0].children[0].setAttribute('input', alert()); alert on loding
+            let type = mySelection[1].children[0].children[0].type;
+            let value = mySelection[1].children[0].children[0].value;
+            let name = mySelection[1].children[0].children[0].name;
+            let title = mySelection[1].children[0].children[1].innerHTML
+            let firstImg = mySelection[1].children[0].children[2]
+            let secondImg = mySelection[1].children[0].children[3]
+            console.log('---------------------------')
+            console.log(type + ' ======= ' + value)
+            console.dir(radioElement);
+            // addEventListener('click', event => alert(event.target.name))
+            mySelection[1].children[0].classList.add('make-green')
+            // mySelection[1].children[0].children[3].classList.add('make-inv')
+            secondImg.classList.add('make-inv')
+            // mySelection[1].style.backgroundColor='green'
+        }
+        function selectQuestion(mySelection, number) {
+            let isCorrect = mySelection[number].children[0].getAttribute('data-correct'); //true or false
+            let type = mySelection[number].children[0].children[0].type;
+            let value = mySelection[number].children[0].children[0].value;
+            let name = mySelection[number].children[0].children[0].name;
+            let title = mySelection[number].children[0].children[1].innerHTML
+            let firstImg = mySelection[number].children[0].children[2]
+            let secondImg = mySelection[number].children[0].children[3]
+
+            mySelection[number].children[0].classList.add('make-red')
+            // mySelection[1].children[0].children[3].classList.add('make-inv')
+            firstImg.classList.add('make-inv')
+            // mySelection[1].style.backgroundColor='green'
+        }
+
+        function workingSection() {
+            function children() {
+                console.log(mySection.length);
+                console.log('=============== children: header and 4 options')
+                console.dir(mySection[0].children)
+                console.log('=============== childNodes')
+                console.dir(mySection[0].childNodes)
+                console.log('=============== childElementCount')
+                console.dir(mySection[0].childElementCount)
+                console.log('=============== firstElementChild')
+                console.dir(mySection[0].firstElementChild)
+                console.log('=============== lastElementChild')
+                console.dir(mySection[0].lastElementChild)
+                console.log('=============== parentElement')
+                console.dir(mySection[0].parentElement)
+            }
+            function childreFirstElement() {
+                console.dir(mySection[0].children[0])
+                console.log('=============== getAttributeNames')
+                console.dir(mySection[0].children[0].getAttributeNames())
+                console.log('=============== getAttributeNames')
+                console.dir(mySection[0].children[0].getAttribute('class'))
+                console.dir(mySection[0].children[1].getAttribute('class'))
+                console.dir(mySection[0].children[2].getAttribute('class'))
+                console.dir('mySection[0].children[0].children');
+                console.dir(mySection[0].children[0].children); //span and div
+                console.dir(mySection[0].children[1].children); //div.form-check
+                console.dir(mySection[0].children[2].children); //div.form-check
+                console.dir('mySection[0].children[0].children[0]'); //span and div
+                console.dir('mySection[0].children[1].children[0]'); //div.form-check
+                console.dir(mySection[0].children[0].children[0]); //span and div
+                console.dir(mySection[0].children[1].children[0]); //div.form-check
+                console.dir(mySection[0].children[2].children[0]); //div.form-check
+                console.dir(mySection[0].children[3].children[0]); //div.form-check
+                console.dir(mySection[0].children[3].children[0]); //div.form-check
+
+                console.log('section[0].children[0].children[0].children'); // [0] and [1]
+                console.dir(mySection[0].children[0].children[0].children); // [0,4]
+                console.dir(mySection[0].children[1].children[0].children);
+
+                let childrenZero = (mySection[0].children[0].children[0].children);
+                let childrenFirst = (mySection[0].children[1].children[0].children);
+                let childrenSecond = (mySection[0].children[2].children[0].children);
+                let childrenThird = (mySection[0].children[3].children[0].children);
+                let childrenFourth = (mySection[0].children[4].children[0].children);
+
+                let childrenFirstGetAttrNames = (mySection[0].children[1].children[0].children[0].getAttributeNames());
+                let childrenSecondGetAttrNames = (mySection[0].children[2].children[0].children[1].getAttributeNames());
+                let childrenThirdGetAttrNames = (mySection[0].children[3].children[0].children[2].getAttributeNames());
+                let childrenFourthGetAttrNames = (mySection[0].children[4].children[0].children[3].getAttributeNames());
+                console.log('childrenFirst')
+                console.log(childrenFirst)
+                childrenFirst[1].style.backgroundColor = 'green'
+                childrenFirst[2].style.backgroundColor = 'green'
+                childrenFirst[3].classList.add('make-inv')
+                // childrenFirst[3].setAttribute('hidden', true)
+                childrenSecond[2].classList.add('make-inv')
+                childrenThird[2].classList.add('make-inv')
+                childrenFourth[2].classList.add('make-inv')
+                // childrenThird[3].classList.add('make-inv')
+                // childrenFourth[3].classList.add('make-inv')
+
+                console.log(childrenFirstGetAttrNames)
+                console.log(childrenSecondGetAttrNames)
+                console.log(childrenThirdGetAttrNames)
+                console.log(childrenFourthGetAttrNames)
+                childrenFirstGetAttrNames
+            }
+            // children();
+            childreFirstElement()
+        }
+
+        console.log(questionSection.length)
+        console.log(myRadio.length)
+        console.log(myImg.length)
+        // workingSection();
+        // selectSection(12);
+        //=================================
+        // selectHeader(selectSection(0))
+
+        // selectFirsQuestion(selectSection(0))
+        // selectQuestion(selectSection(0), 2)
+        // selectQuestion(selectSection(0), 3)
+        // selectQuestion(selectSection(0), 4)
+
+        //========================================
+        // console.dir(questionSection[0].childNod
+        function previousWork() {
+
+            for (let i = 0; i < myImg.length; i++) {
+                myImg[i].setAttribute('hidden', true);
+
+            }
+            for (let i = 0; i < myRadio.length; i++) {
+                // console.log(questionSection[parseInt(i/4)].childNodes[3].childNodes[7].childNodes[5].setAttribute('hidden', true))
+                myRadio[i].addEventListener('click', (event) => {
+                    console.log(questionSection[i / 4].id)
+                    console.dir(questionSection[i / 4].childNodes)
+                    console.dir(questionSection[i / 4].children.length)
+                    console.dir(questionSection[i / 4].children)
+                    console.dir(questionSection[i / 4].children[1])
+                    console.dir(questionSection[i / 4].children[1].tagName)
+                    console.dir(questionSection[i / 4].children[1].id)
+                    console.dir(questionSection[i / 4].children[1].firstElementChild)
+                    questionSection[i / 4].children[1].firstElementChild.style.backgroundColor = 'green'
+                    questionSection[i / 4].children[2].firstElementChild.style.backgroundColor = 'yellow'
+                    console.dir(questionSection[i / 4].childElementCount)
+                })
+            }
+        }
+    </script>
+
+</html>

@@ -1,0 +1,65 @@
+______ is a necessary API for every React.js component.
+renderComponent
+render
+SetinitialComponent
+All of the above
+React is mainly used for developing ______.
+User interface
+Connectivity
+Database
+Design platform
+The Keys given to a list of elements in React should be ______.
+Unique among the siblings only
+Not necessarily unique
+Unique in the DOM (Document Object Model)
+None of the above
+The number of elements that can be returned by a valid React component is ______.
+1
+5
+3
+2
+What are the ReactJS limitations?
+All of these
+React will use inline templating and JSX which might seem awkward to a few developers
+ReactJS is only for the view layer of the application, which means we will make use of other technologies as well for getting complete tooling set for the application development
+The React library is too large
+What function will permit for rendering the React content in an HTML page?
+ReactDOM.render()
+React.render()
+ReactDOM.start()
+React.mount()
+What is meant by the state in React?
+Internal storage of component
+External storage of component
+Permanent storage
+None of the above
+What is React or ReactJS?
+Component-based Javascript library
+Javascript framework
+Javascript file
+None of the above
+What is the declarative approach for rendering a dynamic list of components depending on array values?
+Using Array.map() method
+Using <Each/> component
+Using reduce array method
+Using for or while loop
+What is the usage of setState?
+Invoking the code after the setState operation is performed
+Replacing the state fully instead of the default merge action
+Accessing the earlier state before the setState operation
+None of these
+What is used for passing the data to a component from outside?
+props
+Render with arguments
+setState
+PropTypes
+Which command can be used for the creation of React app?
+npm install create-react-app
+install -g create-react-app
+npm install -g create-react-app
+None of the above
+Which of the following comes under the advantages of React?
+Integration with other frameworks (like BackboneJS, Angular, etc.) becomes easier because it is only a view library
+Increases the performance of an application using Virtual DOM
+Can render both on server and client side
+All of the above
