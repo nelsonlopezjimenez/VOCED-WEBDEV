@@ -1,0 +1,29 @@
+{
+  "name": "voced-webdev",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev --host",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/node": "^8.2.3",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/m-plus-rounded-1c": "^5.0.13",
+    "@types/alpinejs": "^3.13.10",
+    "alpinejs": "^3.13.10",
+    "astro": "^4.4.4",
+    "dotenv": "^16.4.5",
+    "htmx.org": "^1.9.12",
+    "pocketbase": "^0.21.2",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  },
+  "author":"Nelson Lopez Jimenez",
+  "keywords": ["html", "css", "javascript", "htmx", "react", "nodejs", "astro", "tailwind", "tailwindcss"],
+  "license": "GPL-2.0-only"
+}
