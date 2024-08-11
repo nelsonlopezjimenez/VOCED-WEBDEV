@@ -1,7 +1,7 @@
 ---
-title: Module 4
+title: Module 4 my4
 date: 5/8/2024
-myData: 4 my4
+myData: my4
 ---
 
 In module 4 we'll first add a sidebar that lists all

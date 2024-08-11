@@ -1,5 +1,5 @@
 ---
-title: Tutorial tic-tac-toe
+title: Tutorial tic-tac-toe my6
 date: 7/14/2024
 myData: 6 This is the reactjs tic-tac-toe tutorial
 ---

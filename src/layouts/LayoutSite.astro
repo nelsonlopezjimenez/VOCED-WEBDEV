@@ -5,10 +5,12 @@ import SidebarGeneric from '@components/SidebarGeneric.astro';
 import '@fontsource/m-plus-rounded-1c';
 import '@fontsource/m-plus-rounded-1c/800.css';
 
-const { title = 'Spring24app', myData = 'nodata' } = Astro.props;
-// console.log(Astro.props);
-// const { data } = Astro.props;
-// console.log(data.length)
+const { title, date, myData} = Astro.props;
+console.log('===============================')
+console.log(Astro.props);
+// let title='temporarytitle', myData = 'temporarydata';
+console.log('src/layout/LayoutSite.astro: line 13')
+
 ---
 
 <html lang="en">

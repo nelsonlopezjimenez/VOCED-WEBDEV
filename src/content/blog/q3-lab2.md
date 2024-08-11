@@ -1,5 +1,5 @@
 ---
-title: Quarter 3 Lab 2
+title: Quarter 3 Lab 2  q3-lab2
 date: 7/27/2024
 myData: lab02 Modified from Brooks
 ---

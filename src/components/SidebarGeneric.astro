@@ -1,5 +1,6 @@
 ---
 let theprops = Astro.props
+console.log('SidebarGeneric.astro: line 3')
 console.log(theprops)
 
 const contentArr1 = [
@@ -113,34 +114,55 @@ const contentArr4 = [
 'Wrapping up',
 ]
 
+const contentArr8 = ['Star a task',
+'Show starred tasks in the dashboard',
+'Edit the task text',
+'Wrapping up',]
+
+const contentArr = [contentArr1, contentArr2];
+
 let titleSplit = theprops.title.split(' ');
-let modIdx = titleSplit[1];
+let modIdx = titleSplit[titleSplit.length - 1];
+console.log('SidebarGeneric.astro line 119: ')
+console.log(modIdx)
+// const partialMy = contentArr1.map((item, i) => <li key={i}>{item}</li>)
+// for (let i  = 0; i < 2; i++){
+//     contentArr[i].map(item => {
+//         <li>{item}</li>  //unterminated regualar expression
+//     })
+// }
+
+
 ---
 
 <div id="markdown">
-    <p>Astro.props: <a href=`/blog/my${modIdx-1}`>Previous module</a></p>
-    <p>Astro.props: <a href=`/blog/my${modIdx}`>{theprops.title}</a></p>
-
-
+    <p>Astro.props: <a href=`/blog/${modIdx-1}`>Previous module</a></p>
+    <p>Astro.props: <a href=`/blog/${modIdx}`>{theprops.title}</a></p>
 {
-    theprops.title.includes('1') ?
-        contentArr1.map(i => <a href={'#'+ i.replaceAll(' ', '-').toLowerCase()}>{i}</a><br/>)
     
+    titleSplit.includes('my') ?
+    contentArr1.map(i => <a href={'#'+ i.replaceAll(' ', '-').toLowerCase()}>{i}</a><br/>)
     :   (
-        theprops.title.includes('2') ?
+        titleSplit.includes('my2') ?
         contentArr2.map(i => <a href={'#'+ i.replaceAll(' ', '-').toLowerCase()}>{i}</a><br/>)
         :
         (
-            theprops.title.includes('3') ?
+            titleSplit.includes('my3') ?
             contentArr3.map(i => <a href={'#'+ i.replaceAll(' ', '-').toLowerCase()}>{i}</a><br/>)
             
             :
             (
-                theprops.title.includes('4') ?
+                titleSplit.includes('my4') ?
                 contentArr4.map(i => <a href={'#'+ i.replaceAll(' ', '-').toLowerCase()}>{i}</a><br/>)
 
-                :
-                'It is not 1, 2, 3, or 4'
+                : (
+                    titleSplit.includes('my8') ?
+                    contentArr8.map(i => <a href={'#'+ i.replaceAll(' ', '-').toLowerCase()}>{i}</a><br/>)
+                    :
+
+                    'It is not 1, 2, 3, 4 or 8'
+                )
+
             )
         )
         
@@ -148,5 +170,8 @@ let modIdx = titleSplit[1];
     )
 
 }
+
+
+
 
 </div>

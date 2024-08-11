@@ -1,6 +1,7 @@
 ---
-title: Bash history creeperpandatrex
+title: Bash history creeperpandatrex history
 date: 5/17/2024
+myData: Bash
 ---
  
 ## GRCh38

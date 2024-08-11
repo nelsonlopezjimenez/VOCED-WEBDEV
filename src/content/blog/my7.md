@@ -1,5 +1,5 @@
 ---
-title: JavaScript Fundamentals Exercises
+title: JavaScript Fundamentals Exercises my7
 date: 7/14/2024
 myData: 7 Exercises using jasmine test suite
 ---

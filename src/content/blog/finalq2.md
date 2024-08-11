@@ -1,6 +1,7 @@
 ---
-title: Questions final quarter2
+title: Questions final quarter2 finalq2
 date: 5/28/3024
+myData: Questions final quarter2 
 ---
 # My Terrarium: A project to learn about HTML, CSS, and DOM manipulation using JavaScript 🌵🌱
 

@@ -1,5 +1,5 @@
 ---
-title: Module 1
+title: Module 1 my
 date: 4/1/2024
 myData: 1 my Introduction to the module, The app requirements, How we’re going to store the data, Data modeling after the requisites, PocketBase installation options, Explore PocketBase,
 ---

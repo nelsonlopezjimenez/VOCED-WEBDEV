@@ -1,5 +1,5 @@
 ---
-title: what is http
+title: what is http verbs
 date: 7/27/2024
 myData: W3S web site based https://www.w3schools.com/whatis/whatis_http.asp
 ---
