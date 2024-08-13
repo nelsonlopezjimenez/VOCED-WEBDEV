@@ -182,6 +182,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"my101a.md": {
+	id: "my101a.md";
+  slug: "my101a";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "my102.md": {
 	id: "my102.md";
   slug: "my102";
