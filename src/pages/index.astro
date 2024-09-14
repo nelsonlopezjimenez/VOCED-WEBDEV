@@ -33,10 +33,73 @@ import Card from '../components/Card.astro';
         </linearGradient>
       </defs>
     </svg>
-
+    <a href="/" class="mr-auto"
+      ><img
+        class="w-52"
+        src="image/edmonds-college-logo.svg"
+        alt="Edmonds College Logo"
+        width="300"
+        height="72"
+      /></a
+    >
     <h1>Welcome to <span class="text-gradient">Web Development</span></h1>
 
-    <p class="instructions">QUARTER 4 2024 summer PM</p>
+    <p class="instructions">Web Application Developer Certificate</p>
+
+    <ul role="list" class="link-card-grid">
+      <!-- <Card
+        href="./blog/my6"
+        title="tic-tac-toe"
+        body=""
+      /> -->
+
+      <Card
+        href="edmonds-college/Program_ Computer Information Systems - Web Application Developer Certificate - Edmonds College.html"
+        title="Program Description"
+        body=""
+      />
+
+      <Card
+        href="edmonds-college/Calendar - Academic Calendar _ Edmonds College.html"
+        title="Academic Calendar"
+        body=""
+      />
+    </ul>
+
+    <p class="instructions">
+      4 Study Periods (trimester/quarters)<a href="/"> &#x1f3e0</a>
+    </p>
+    <ul role="list" class="link-card-grid">
+      <Card
+        href="./#q1"
+        title="QUARTER 1"
+        body="CIS 241 - Web Development I; ART 225 - Introduction to Graphic Design"
+      />
+      <Card
+        href="./#q2"
+        title="QUARTER 2"
+        body="CIS 242 - Web Development II: JavaScript and jQuery; CS 115 - Principles of Computer Science"
+      />
+      <Card
+        href="./#q3summer"
+        title="QUARTER 3"
+        body="CIS 243 - Web Development III: Server-Side Scripting; CIS 245 - Web Development V: Introduction to CSS"
+      />
+      <Card
+        href="./#q3spring"
+        title="QUARTER 3"
+        body="CIS 244 - Web Development IV: Introduction to JavaScript Frameworks; CIS 246 - Web Development VI: JavaScript Frameworks"
+      />
+      <Card href="./#q4" title="QUARTER 4" body="" />
+      <!-- <Card
+        href="./blog/my6"
+        title="tic-tac-toe"
+        body=""
+      /> -->
+    </ul>
+    <p class="instructions" id="q4">
+      QUARTER 4 2024 summer PM <a href="/"> &#x1f3e0</a>
+    </p>
     <ul role="list" class="link-card-grid">
       <Card
         href="./blog/my6"
@@ -73,7 +136,9 @@ import Card from '../components/Card.astro';
       <Card href="./blog/" title="All Modules" body="" />
     </ul>
 
-    <p class="instructions">QUARTER 3 2024 summer AM</p>
+    <p class="instructions" id="q3summer">
+      QUARTER 3 2024 summer AM <a href="/"> &#x1f3e0</a>
+    </p>
     <ul role="list" class="link-card-grid">
       <Card
         href="./blog/my7"
@@ -128,7 +193,9 @@ import Card from '../components/Card.astro';
       />
     </ul>
 
-    <p class="instructions">QUARTER 3 2024 spring PM</p>
+    <p class="instructions" id="q3spring">
+      QUARTER 3 2024 spring PM <a href="/"> &#x1f3e0</a>
+    </p>
     <ul role="list" class="link-card-grid">
       <Card
         href="./blog/my"
@@ -172,7 +239,7 @@ import Card from '../components/Card.astro';
       <Card href="XXXXXXXX" title="Module 3" body="XXXXXXXXXXX " />
       <Card href="XXXXXXXX" title="Module 3" body="XXXXXXXXXXX " />
     </ul>
-    <p class="instructions">QUARTER 2</p>
+    <p class="instructions" id="q2">QUARTER 2 <a href="/"> &#x1f3e0</a></p>
     <ul role="list" class="link-card-grid">
       <Card href="/#" title="Module 1" body="." />
       <Card href="/#" title="Module 2" body="." />
@@ -223,6 +290,15 @@ import Card from '../components/Card.astro';
     padding: 1.5rem;
     border-radius: 8px;
   }
+  .instructions a {
+    width: 8em;
+    color: black;
+    background-color: aliceblue;
+    padding: 0.8em 0.6em;
+    border-left: 0.3em;
+    /* border: 4px red solid; */
+  }
+
   .instructions code {
     font-size: 0.8em;
     font-weight: bold;

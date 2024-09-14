@@ -1,0 +1,224 @@
+/////////////////////////////////////////////////////////
+//	Rave/Emergency messaging stuff
+/////////////////////////////////////////////////////////
+//rave_url='http://www.getrave.com/rss/edcc/channel1';
+
+function emessage_rave_load () {
+	////ajax("http://www.edmonds.edu/_resources/includes/rave_alert.htm",'emessage_rave',function() { emessage_refresh(); setTimeout(function () { emessage_rave_load(); },30000); } );
+	//ajax("http://www.edmonds.edu/_resources/includes/rave_alert.htm",'emessage_rave',function() { emessage_refresh(); setTimeout(function () { emessage_rave_load(); },30000); } );
+	//ajax("//www.edmonds.edu/_resources/includes/rave_alert.htm",'emessage_rave',function() { emessage_rave_sequence_load(); setTimeout(function () { emessage_rave_load(); },30000); } );
+	//ajax("http://www.edmonds.edu/_resources/includes/rave_alert2.htm",'emessage_rave',function() { emessage_rave_sequence_load(); setTimeout(function () { emessage_rave_load(); },30000); } );
+	//console.log("Just ran emessage_rave_load().");
+	alertts=Math.floor(Date.now() / 1000);
+	ajax("//www.edmonds.edu/_resources/includes/rave_alert.htm?ts=" + alertts,'emergency-message-target',function() { emessage_refresh(); setTimeout(function () { emessage_rave_load(); },30000); } );
+}
+
+function emessage_refresh() {
+	emessage_div=document.getElementById('emergency-message-target');
+	if(emessage_div.innerHTML=='') emessage_div.style.display='none';
+	else emessage_div.style.display='block';
+}
+
+
+
+
+
+
+
+
+/*
+function emessage_rave_sequence_load() {
+	ajax("//www.edmonds.edu/_resources/includes/rave_serial_num.htm",'emessage_serial_number',function() { emessage_refresh(); } );	
+	//ajax("http://www.edmonds.edu/_resources/includes/rave_serial_num2.htm",'emessage_serial_number',function() { emessage_refresh(); } );	
+}
+
+function emessage_refresh() {
+	//console.log('emessage_refresh (not rave) just ran');
+	$("#emessage").html($("#emessage_ou").html() + $("#emessage_rave").html());
+	//if ($('#emessage').html()=='') $('#emessage_wide').css('display','none');
+	//else $('#emessage_wide').css('display','block');
+	if ($('#emessage').html()=='') {
+		$('#emessage_modal').modal('hide');
+		$('.emessage_icon').hide();
+	} else {
+		serial_number=$("#emessage_serial_number").html();
+		if (edcc_emessage_dismiss_id<serial_number) {
+			$('#emessage_modal').modal('show');
+			$('#notification_modal').modal('hide');
+		}	
+		$('.emessage_icon').show();
+	}
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+function directedit() {
+	var link = document.getElementById("de").parentNode.innerHTML;
+	document.getElementById("de").parentNode.innerHTML = null;
+	document.getElementById("directedit").innerHTML = link;
+}
+
+
+
+function departmentnav_select() {
+	r_url=relative_standard_url(document.location.href);
+	deptnavlist=document.querySelectorAll("div.dept-nav ul li a[href='" + r_url + "']");
+	if (deptnavlist.length>0) {
+		current_selection_object=deptnavlist[0];
+		current_selection_object.classList.add("bg-gray-verylight");
+		current_selection_object.classList.add("text-veryDarkBlue");		
+		document.querySelectorAll("div.dept-nav button.dept-nav__dept")[0].innerHTML=current_selection_object.innerHTML;
+
+	} else {
+		r_url=relative_directory_url(document.location.href);
+		deptnavlist=document.querySelectorAll("div.dept-nav ul li a[href='" + r_url + "']");		
+		if (deptnavlist.length>0) {
+			current_selection_object=deptnavlist[0];
+			current_selection_object.classList.add("bg-gray-verylight");
+			current_selection_object.classList.add("text-veryDarkBlue");		
+			document.querySelectorAll("div.dept-nav button.dept-nav__dept")[0].innerHTML=current_selection_object.innerHTML;
+
+		}
+	}
+}
+
+
+
+function change_language(langcode) {
+	document.location="#googtrans(en|" + langcode + ")";
+	location.reload();
+}
+
+
+
+function sidenav_select() {
+	r_url=relative_standard_url(document.location.href);
+	//const nodeList= document.querySelectorAll("p");
+	navlist=document.querySelectorAll("div.sidebar-nav a[href='" + r_url + "']");
+	if (navlist.length>0) {
+		navlist[0].style.backgroundColor = "#F1F1F1"; 
+		listitem=navlist[0].parentNode;
+		listitem.classList.add("lg:border-l-8");
+		listitem.classList.add("lg:-ml-2");
+		listitem.classList.add("lg:border-accentGreen");
+	} else {
+		rf_url=relative_full_url(document.location.href);
+		navlist=document.querySelectorAll("div.sidebar-nav a[href='" + rf_url + "']");
+		if (navlist.length>0) {
+			navlist[0].style.backgroundColor = "#F1F1F1"; 
+			listitem=navlist[0].parentNode;
+			listitem.classList.add("lg:border-l-8");
+			listitem.classList.add("lg:-ml-2");
+			listitem.classList.add("lg:border-accentGreen");
+		}
+	}
+}
+
+function relative_full_url(url) {
+	const regexfront=/^http[s]*:\/\/[^\/]*\//i
+	newurl=url.replace(regexfront,'/');
+	const regexend=/\/$/i
+	newurl=newurl.replace(regexend,'/default.html');
+	return(newurl);
+
+}
+
+function relative_standard_url (url) {
+	const regexfront=/^http[s]*:\/\/[^\/]*\//i
+	newurl=url.replace(regexfront,'/');
+	const regexend=/\/default.html$/i
+	newurl=newurl.replace(regexend,'/');
+	return(newurl);
+}
+
+function relative_directory_url (url) {
+	const regexfront=/^http[s]*:\/\/[^\/]*\//i
+	newurl=url.replace(regexfront,'/');
+	const regexend=/\/[^\/]*$/i
+	newurl=newurl.replace(regexend,'/');
+	return(newurl);
+}
+
+
+
+function edmondsShowTab(tab_id,tab_group) {
+	newtab=tab_id + '-' + tab_group + '-content';
+	var tabObjectsList=document.querySelectorAll('.' + tab_group + '.current_tab');
+	for (var i = 0; i < tabObjectsList.length; i++) {
+		tabObjectsList[i].classList.remove('current_tab')
+	}
+	document.getElementById(tab_id).classList.add('current_tab');
+	document.getElementById(newtab).classList.add('current_tab');
+}
+
+
+
+/*
+############################################################
+############################################################
+	Good old standby functions useful on any site
+############################################################
+############################################################
+*/
+
+function ajaxc(r,i,cb) {
+	if (r.readyState==4&&r.status==200) { 
+		t=typeof(i);
+		if (t=="object") {
+			i.innerHTML=r.responseText;
+			//console.log('ajaxc putting response text directly into object');
+		} else {
+			document.getElementById(i).innerHTML=r.responseText;
+			//console.log('ajaxc putting response text into object with id: ' + i);
+		}
+
+		if (jQuery.isFunction(cb)) cb();
+
+		if (isfunction(cb)) cb;
+	}
+}
+
+function ajax(url,i,cb) {
+	var r=(window.ActiveXObject)?new ActiveXObject("Microsoft.XMLHTTP"):new XMLHttpRequest(); 
+	r.onreadystatechange=function() { ajaxc(r,i,cb); }
+	r.open("GET",url,true);r.send(null);
+	return(r);
+}
+
+function isfunction(variable) {
+	var getType = {};
+	return variable && getType.toString.call(variable) === '[object Function]';
+}
+
+/*
+############################################################
+	End of standby functions
+############################################################
+*/
+
+
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+// Things to run when the page is done loading... Just put the
+// function calls into the middle under the directedit() call
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+document.addEventListener("DOMContentLoaded", function(event) { 
+	directedit();
+	sidenav_select();
+	departmentnav_select();
+	emessage_rave_load();
+});
+

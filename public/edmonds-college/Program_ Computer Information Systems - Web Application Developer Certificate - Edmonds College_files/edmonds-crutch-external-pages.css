@@ -1,0 +1,110 @@
+
+/* General rules */
+
+main table {
+	width:auto;
+}
+
+
+
+main table tr {
+	border-bottom-width: 0;
+}
+
+
+
+/* tritonid lookup rules */
+a:hover {
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+}
+input[type=submit] {
+	border: none;
+	border-radius: 0.25em;
+    --tw-bg-opacity: 1;
+    background-color: rgb(179 238 49/var(--tw-bg-opacity));
+
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    padding-bottom: .75rem;
+    padding-top: .75rem;
+}
+input[type=submit]:hover {
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+}
+
+
+/*
+select2-container select2-container--default select2-container--open
+*/
+
+/* Acalog rules */
+span.select2-container.select2-container--default.select2-container--open span.select2-dropdown.catalog-selection-dropdown span.select2-results
+{
+	position: fixed;
+	background: white;
+	width: 400px;
+}
+
+.acalog-custom header {
+	margin-bottom: 35px;
+}
+
+
+.acalog-custom header ul li a.inline-block {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.acalog-custom header a.bg-accentGreen-light {
+    --tw-bg-opacity: 1;
+    background-color: rgb(179 238 49/var(--tw-bg-opacity));
+}
+
+
+.acalog-custom header a {
+    color: rgb(0 77 113/var(--tw-text-opacity));
+}
+
+
+.acalog-custom header .text-tritonBlue {
+    --tw-text-opacity: 1;
+    color: rgb(0 77 113/var(--tw-text-opacity));
+}
+
+#gateway-popup body, #gateway-page body {
+    background-color: #ffffff;
+}
+
+
+.acalog-custom header .bg-gray-verylight {
+    --tw-bg-opacity: 1;
+    background-color: rgb(241 241 241/var(--tw-bg-opacity));
+}
+
+/*
+.acalog-custom header .border-tritonBlue {
+    --tw-border-opacity: 1;
+    border-color: rgb(0 77 113/var(--tw-border-opacity));
+    border: 1px; 
+}
+*/
+
+.acalog-custom header a.border-tritonBlue {
+	border: 2px solid rgb(0 77 113/var(--tw-border-opacity));
+}
+
+[aria-controls='header__languages'] {
+  display: none;
+}
+
+.acalog-custom header
+.acalog-custom header
+.acalog-custom header
+.acalog-custom header
+.acalog-custom header
+.acalog-custom header
+.acalog-custom header
+

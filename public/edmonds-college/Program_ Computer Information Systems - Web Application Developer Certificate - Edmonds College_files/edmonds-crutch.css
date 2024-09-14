@@ -1,0 +1,321 @@
+/* Temporary because IT screwed up posting */
+
+.btn-outline {
+    --tw-border-opacity: 1;
+    align-items: center;
+    background-color: rgb(255 255 255/var(--tw-bg-opacity));
+    border-color: rgb(149 214 0/var(--tw-border-opacity));
+    border-radius: 9999px;
+    border-width: 2px;
+    color: rgb(0 77 113/var(--tw-text-opacity));
+    display: inline-flex;
+    font-family: Gotham,sans-serif;
+    font-size: .8125rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    line-height: 1.25;
+    padding-bottom: .625rem;
+    padding-left: 1.25rem;
+    padding-top: .625rem;
+    text-transform: uppercase
+}
+
+.btn-outline,.btn-outline:hover {
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1
+}
+
+.btn-outline:hover {
+    background-color: rgb(241 241 241/var(--tw-bg-opacity));
+    color: rgb(38 55 70/var(--tw-text-opacity));
+    -webkit-text-decoration-line: none;
+    text-decoration-line: none
+}
+
+
+main ul.breadcrumbs.news {
+	display: block;
+}
+
+
+
+.float-right {
+	float: right;
+}
+
+
+
+#emergency-message-target {
+	color: white !important;
+	cursor: pointer;
+}
+
+div.alert.alert-success {
+	background-color: rgb(149 214 0/var(--tw-bg-opacity));
+	padding: 40px;
+	width: auto;
+	max-width: 50%;
+	margin: auto;
+	text-align: center;
+	color: rgb(0 61 90/var(--tw-text-opacity));
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+div.alert.alert-failure {
+	background-color: rgb(255 100 85/var(--tw-bg-opacity));
+	padding: 40px;
+	width: auto;
+	max-width: 50%;
+	margin: auto;
+	text-align: center;
+	color: rgb(0 61 90/var(--tw-text-opacity));
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+div.edmonds_news img {
+	min-width: 300px;
+}
+
+
+div.edmonds_news table {
+	width: 100px;
+	
+}
+
+dov.edmonds_new img {
+	width: 100%;
+}
+
+
+
+
+div.sidebar-nav ul {
+	position: relative;
+}
+
+
+
+#header__languages ul li.my-1 a {
+	cursor: pointer;
+}
+
+@media (min-width: 640px) {
+	.dept-nav {
+		max-height: 65px;
+	}
+}
+
+
+div.bg-alert:empty {
+	/*display: none;*/
+
+	}
+
+div.bg-alert {
+	/*display:none;*/
+	/* **** DON'T EDIT HERE ANY MORE **** */
+}
+
+.ou-justedit-region .button-boxes {
+	display: block;
+	}
+	
+.ou-justedit-region .button-boxes_masonry {
+	display: block
+	}
+	
+div.button-box_is-half-height div.button-box__header {
+    --button-box-min-height: 77px;
+}
+
+maincontent:empty,
+main p:empty {
+	display: none;
+}
+
+
+
+.has-large-dark-shadow {
+    text-shadow: 0 0 45px #000,0 0 60px rgba(0,0,0,.8);
+    z-index: 9;
+}
+
+
+
+/*
+---------------------------------------------------
+Ordered Lists and Unorderd list fixes
+---------------------------------------------------
+*/
+
+main ol,
+main ul {
+	padding-left: 40px;
+	margin-bottom: 20px;
+}
+
+main ol {
+	list-style: decimal;
+}
+
+main ul {
+	list-style: disc;
+}
+
+main div.js-carousel ul {
+	list-style-type: none;
+}
+
+main ol.carousel__navigation,
+main ol.carousel__list {
+	list-style-type: none;
+	}
+
+main ol.is-navigation:not(main ul.asdfasdfasedf) li {
+	list-style-type: none;
+}
+main ul.is-navigation:not(main ul.asdfasdfasedf) li {
+	list-style-type: none;
+}
+main ol.is-navigation:not(main ul.asdfasdfasedf),
+main ul.is-navigation:not(main ul.asdfasdfasedf) {
+	padding: 0;
+}
+
+main div.dept-nav ul li {
+	list-style-type: none;
+}
+
+main div.dept-nav ul,
+main div.dept-nav ll{
+	margin: 0;
+	padding:0;
+}
+
+.sidebar-nav li {
+	list-style-type: none;
+}
+
+main ul.breadcrumbs {
+	margin-bottom: 40px;
+	clear: both;
+}
+
+main div.js-carousel ul,
+main div.js-carousel ol {
+	padding-left: 0px;
+	margin-bottom: 0px;
+}
+/*
+---------------------------------------------------
+END OF: ordered Lists and Unorderd list fixes
+---------------------------------------------------
+*/
+
+
+main blockquote {
+	margin-left: 1em;
+	border-left: 1px solid #7D7D80;
+	padding-left: 1.5em;
+	font-style: italic;
+	/* color: rgb(0 77 113/var(--tw-text-opacity)); */
+	}
+
+/*.sidebar-nav {
+	border-collapse: none;
+}
+*/
+
+div.grid-cols-2.snippet {
+	gap: 2rem;
+}
+
+.video-container {
+    position:relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	z-index:0;
+}
+
+.calendar-container {
+    position: relative;
+  	overflow: hidden;
+  	width: 100%;
+  	padding-top: 56.25%;
+}
+
+.calendar-container iframe {
+    position: absolute;
+  	top: 0;
+  	left: 0;
+  	bottom: 0;
+  	right: 0;
+  	width: 100%;
+  	height: 100%;
+}
+
+/*
+---------------------------------------------------
+Google Translate Insanity
+---------------------------------------------------
+*/
+
+
+#google_translate_element {
+	display: none;
+}
+
+
+
+/*
+#google_translate_element span[Text ~="Lao"] {
+	display: none;
+}
+
+.goog-te-menu2-item {
+	background:purple;
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
