@@ -64,6 +64,12 @@ import Card from '../components/Card.astro';
         title="Academic Calendar"
         body=""
       />
+
+      <Card
+        href="edmonds-college/EDMONDS WEB DEV-one-slide-ver2.pdf"
+        title="Fall 2024 Flyer"
+        body="What Is NOT Web Development"
+      />
     </ul>
 
     <p class="instructions">
@@ -80,22 +86,35 @@ import Card from '../components/Card.astro';
         title="QUARTER 2"
         body="CIS 242 - Web Development II: JavaScript and jQuery; CS 115 - Principles of Computer Science"
       />
+      <Card href="./#q3spring" title="QUARTER 3 SP2024" body="" />
       <Card
         href="./#q3summer"
-        title="QUARTER 3"
+        title="QUARTER 3 SU2024"
         body="CIS 243 - Web Development III: Server-Side Scripting; CIS 245 - Web Development V: Introduction to CSS"
       />
       <Card
-        href="./#q3spring"
-        title="QUARTER 3"
+        href="./#q4"
+        title="QUARTER 4 SU2024"
         body="CIS 244 - Web Development IV: Introduction to JavaScript Frameworks; CIS 246 - Web Development VI: JavaScript Frameworks"
       />
-      <Card href="./#q4" title="QUARTER 4" body="" />
       <!-- <Card
         href="./blog/my6"
         title="tic-tac-toe"
         body=""
       /> -->
+    </ul>
+
+    <p class="instructions" id="q1">
+      QUARTER 1 FA2024 <a href="/"> &#x1f3e0</a>
+    </p>
+    <ul role="list" class="link-card-grid">
+      <Card href="./blog/syllabus-q1" title="Syllabus" body="" />
+      <!-- <Card
+        href="./blog/my6"
+        title="tic-tac-toe"
+        body=""
+      /> -->
+      <!-- <Card href="./blog/" title="All Module" body="" /> -->
     </ul>
     <p class="instructions" id="q4">
       QUARTER 4 2024 summer PM <a href="/"> &#x1f3e0</a>
@@ -314,6 +333,6 @@ import Card from '../components/Card.astro';
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 2rem;
-    padding: 0;
+    padding-bottom: 2%;
   }
 </style>
