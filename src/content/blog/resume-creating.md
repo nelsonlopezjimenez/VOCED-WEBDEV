@@ -57,19 +57,35 @@ Objective: Position utilizing Office Management, Access Database, and Customer S
 
 List your skills and personal attributes (i.e. organized, accurate). Use a box format or bullets to draw attention to this section.
 
-|                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| #### Example:                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| **QUALIFICATIONS**<br><br>_ MS Office 2000 (Word, Excel, Access and PowerPoint, Publisher, Outlook)<br>_ Internet research<br>_ Ten key by touch<br>_ Enjoy multitasking and a fast pace<br>_ Well organized and good at follow through<br>_ Extensive experience in customer service<br>\* Skilled in handling customer complaints<br><br>If you are in CIS or CEN use this section to list all your technical skills (Hardware, Software, Networking, Programming) |
+#### Example:
+
+**QUALIFICATIONS**
+
+- MS Office 2000 (Word, Excel, Access and PowerPoint, Publisher, Outlook)
+- Internet research1. Ten key by touch
+- Enjoy multitasking and a fast pace
+- Well organized and good at follow through
+- Extensive experience in customer service
+- Skilled in handling customer complaints
+
+If you are in CIS or CEN use this section to list all your technical skills (Hardware, Software, Networking, Programming) |
 
 ### Education
 
 Show certificates and degrees you have received. Include the graduation date if it’s within the past five years. When your graduation date is in the future, list the degree and college, followed by parenthesis showing the date, i.e. (expected June 2002). Include your grade point when it’s 3.5 or above. If you have no related job experience, list class projects as a way to show your skills and knowledge.
 
-|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| #### Example:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| Associate of Technical Arts, Paralegal (GPA 3.6)                        2002 <br>Edmonds College, Lynnwood, WA<br><br>_ Trained in drafting documents such as summons, complaints, and wills<br>_ Assisted students in Westlaw research class. Gained reputation for clear explanations.<br>_ Assignments in Intellectual Properties and Civil Procedure recognized as “best in class”<br>_ Researched and prepared legal memorandum for Legal Research class<br>_ Analyzed court rules; drafted pleadings and motions for Civil Procedure class<br>_ Courses included: Litigation Practice, Real Estate and Property Law, Commercial Transactions, Evidence, Law Office Management, Interviewing and Investigation Techniques, Advanced Legal Writing and Research. |
+#### Example:
+
+### Associate of Technical Arts, Paralegal (GPA 3.6)                        2002
+
+Edmonds College, Lynnwood, WA
+
+- Trained in drafting documents such as summons, complaints, and wills
+- Assisted students in Westlaw research class. Gained reputation for clear explanations.
+- Assignments in Intellectual Properties and Civil Procedure recognized as “best in class”
+- Researched and prepared legal memorandum for Legal Research class
+- Analyzed court rules; drafted pleadings and motions for Civil Procedure class
+- Courses included: Litigation Practice, Real Estate and Property Law, Commercial Transactions, Evidence, Law Office Management, Interviewing and Investigation Techniques, Advanced Legal Writing and Research.
 
 ### Work Experience (including Internships)
 
@@ -99,10 +115,19 @@ There are two common formats for a résumé. Choose the one that presents your b
 
 Employers hire you because of the contributions you can make and problems you can solve. The most effective method for demonstrating your talents and capabilities is showing concrete examples of what you have already achieved. An “accomplishment” is something you did in your professional, academic or personal life that you feel you did well. Statements demonstrating your accomplishments form the core of an effective résumé and make it stand out. If you have no related work or internship experience, use class projects to demonstrate your capabilities and accomplishments
 
-|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| #### Example:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Examples of Class Projects:**<br><br>_ Working in teams, planned and executed several database systems and hardware requirements from the beginning to the SDLC to the final stages<br>_ Setup, configured, and maintained a networked environment containing five routers and switches<br>_ Team leader on the basic design of LAN – designed LAN for two campus buildings<br>_ Team member for a Help Desk Staff of five students – provided technical support for 40+ computers and users, simulating real-world operational problems<br><br>**Examples of job-related accomplishments:**<br><br>_ Developed filing and record keeping system that resulted in fast and easy access to data. Received many positive comments from supervisors and department heads.<br>_ Streamlined administrative procedures, increasing efficiency of claims handling and reducing required staffing level.<br>_ Participated in a team that increased productivity 30% over one year, while reducing the reject rate from 15% to 1%.<br>_ Selected by management as Quality Leader of the Month based on perfect attendance and punctuality, positive attitude, and quality of work. |
+#### Example:
+
+| **Examples of Class Projects:**<br>
+
+- Working in teams, planned and executed several database systems and hardware requirements from the beginning to the SDLC to the final stages
+- Setup, configured, and maintained a networked environment containing five routers and switches
+- Team leader on the basic design of LAN – designed LAN for two campus buildings
+- Team member for a Help Desk Staff of five students – provided technical support for 40+ computers and users, simulating real-world operational problems<br><br>
+  -Examples of job-related accomplishments:\*\*<br>
+- Developed filing and record keeping system that resulted in fast and easy access to data. Received many positive comments from supervisors and department heads.
+- Streamlined administrative procedures, increasing efficiency of claims handling and reducing required staffing level.
+- Participated in a team that increased productivity 30% over one year, while reducing the reject rate from 15% to 1%.
+- Selected by management as Quality Leader of the Month based on perfect attendance and punctuality, positive attitude, and quality of work.
 
 ### Here’s a step-by-step process to develop accomplishment statements for your résumé:
 

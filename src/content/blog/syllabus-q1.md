@@ -137,72 +137,72 @@ The Triton Alert System information is here: www.edcc.edu/alert/triton. This Sys
 
 ```
 Week 1 - Introduction to the course. Syllabus content. Introduce Yourself.
- Canvas Videos.
+    Canvas Videos.
 Week 2 - Lesson 1 Markup Language and Site Development Essentials
-Assignments:
-Activity 1-1: Defining Web page authoring terms
-Discussion -- Lesson 1 Markup Language and Site Development Essentials
-HTML Editor Assignment
-Lesson 1: Online Exercises
-Review Quiz : Lesson 1 Markup Language and Site Development Essentials
+    Assignments:
+    Activity 1-1: Defining Web page authoring terms
+    Discussion -- Lesson 1 Markup Language and Site Development Essentials
+    HTML Editor Assignment
+    Lesson 1: Online Exercises
+    Review Quiz : Lesson 1 Markup Language and Site Development Essentials
 Week 3 - Lesson 2 HTML5 Coding
-Assignments:
-Activity 2-1: Identifying HTML elements and attributes
-Discussion -- Lesson 2 HTML5 Coding
-HTML5 Coding Assignment
-Review Quiz : Lesson 2 HTML5 Coding
-Site Structure Assignment
+    Assignments:
+    Activity 2-1: Identifying HTML elements and attributes
+    Discussion -- Lesson 2 HTML5 Coding
+    HTML5 Coding Assignment
+    Review Quiz : Lesson 2 HTML5 Coding
+    Site Structure Assignment
 Week 4 - Lesson 3 Cascading Style Sheets (CSS) and Graphical Elements
-Assignments:
-Activity 3-1: Identifying HTML and CSS terms
-CSS and Graphical Elements Assignment
-Discussion -- Lesson 3 Cascading Style Sheets (CSS) and Graphical Elements
-FTP Assignment
-Review Quiz : Lesson 3 Cascading Style Sheets (CSS) and Graphical Elements
+    Assignments:
+    Activity 3-1: Identifying HTML and CSS terms
+    CSS and Graphical Elements Assignment
+    Discussion -- Lesson 3 Cascading Style Sheets (CSS) and Graphical Elements
+    FTP Assignment
+    Review Quiz : Lesson 3 Cascading Style Sheets (CSS) and Graphical Elements
 Week 5 - Lesson 4 Hyperlinks
-Assignments:
-Discussion -- Lesson 4 Hyperlinks
-Hyperlink Assignment
-Programming Tool, WinMerge
-Review Quiz : Lesson 4 Hyperlinks
-Activity 4-1: Writing HTML hyperlink code
+    Assignments:
+    Discussion -- Lesson 4 Hyperlinks
+    Hyperlink Assignment
+    Programming Tool, WinMerge
+    Review Quiz : Lesson 4 Hyperlinks
+    Activity 4-1: Writing HTML hyperlink code
 Week 6 - Lesson 5 HTML Tables
-Assignments:
-Discussion -- Lesson 5 HTML Tables
-HTML Tables Assignment
-Programming Tool, Agent Ransack Assignment
-Review Quiz : Lesson 5 HTML Tables
-Activity 5-1: Identifying HTML table elements and attributes
+    Assignments:
+    Discussion -- Lesson 5 HTML Tables
+    HTML Tables Assignment
+    Programming Tool, Agent Ransack Assignment
+    Review Quiz : Lesson 5 HTML Tables
+    Activity 5-1: Identifying HTML table elements and attributes
 Week 7 - Lesson 6 Web Forms
-Assignments:
-Discussion -- Lesson 6 Web Forms due by 11:59pm
-Review Quiz : Lesson 6 Web Forms due by 11:59pm
-Web Forms Assignment due by 11:59pm
-Activity 6-1: Identifying HTML form elements and attributes
+    Assignments:
+    Discussion -- Lesson 6 Web Forms due by 11:59pm
+    Review Quiz : Lesson 6 Web Forms due by 11:59pm
+    Web Forms Assignment due by 11:59pm
+    Activity 6-1: Identifying HTML form elements and attributes
 Week 8 - Lesson 7 Video, Audio, and Images Techniques
-Assignments:
-Activity 7-1: Reviewing video, audio and image map elements and attributes
-Discussion -- Lesson 7 Video, Audio, and Images Techniques
-Review Quiz : Lesson 7 Video, Audio, and Images Techniques
-Video, Audio, and Images Assignment
+    Assignments:
+    Activity 7-1: Reviewing video, audio and image map elements and attributes
+    Discussion -- Lesson 7 Video, Audio, and Images Techniques
+    Review Quiz : Lesson 7 Video, Audio, and Images Techniques
+    Video, Audio, and Images Assignment
 Week 9 - Lesson 8 Extending HTML
-Assignments:
-Activity 8-1: Reviewing Web technology terms
-Discussion -- Lesson 8 Extending HTML
-Extending HTML Assignment
-Review Quiz : Lesson 8 Extending HTML
+    Assignments:
+    Activity 8-1: Reviewing Web technology terms
+    Discussion -- Lesson 8 Extending HTML
+    Extending HTML Assignment
+    Review Quiz : Lesson 8 Extending HTML
 Week 10 - Lesson 9 GUI HTML Editors & Mobile Web Sites
-Assignments:
-Activity 9-1: GUI HTML Editors & Mobile Web Sites
-Discussion -- Lesson 9 GUI HTML Editors & Mobile Web Sites
-GUI Editors & Mobile Web Sites Assignment
-Review Quiz : Lesson 9 GUI HTML Editors & Mobile Web Sites
+    Assignments:
+    Activity 9-1: GUI HTML Editors & Mobile Web Sites
+    Discussion -- Lesson 9 GUI HTML Editors & Mobile Web Sites
+    GUI Editors & Mobile Web Sites Assignment
+    Review Quiz : Lesson 9 GUI HTML Editors & Mobile Web Sites
 Week 11 - Lesson 10 Web Site Development for Business
-Assignments:
-Activity 10-1: Defining site development terms
-Discussion -- Lesson 10 Web Site Development for Business
-Review Quiz : Lesson 10 Web Site Development for Business
+    Assignments:
+    Activity 10-1: Defining site development terms
+    Discussion -- Lesson 10 Web Site Development for Business
+    Review Quiz : Lesson 10 Web Site Development for Business
 Week 12 – Site Development Associate – Conclusion
-Assignments:
-Competency Demonstration - CIS 241 Web Dev I Final Project
+    Assignments:
+    Competency Demonstration - CIS 241 Web Dev I Final Project
 ```

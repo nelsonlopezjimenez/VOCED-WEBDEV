@@ -133,6 +133,20 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"balsamiq-first-wireframe.md": {
+	id: "balsamiq-first-wireframe.md";
+  slug: "balsamiq-first-wireframe";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"balsamiq-wireframes.md": {
+	id: "balsamiq-wireframes.md";
+  slug: "balsamiq-wireframes";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "cors.md": {
 	id: "cors.md";
   slug: "cors";
@@ -280,9 +294,37 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"q1w01.md": {
+	id: "q1w01.md";
+  slug: "q1w01";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "q3-lab2.md": {
 	id: "q3-lab2.md";
   slug: "q3-lab2";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"resume-creating.md": {
+	id: "resume-creating.md";
+  slug: "resume-creating";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"resume-technical.md": {
+	id: "resume-technical.md";
+  slug: "resume-technical";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"syllabus-q1.md": {
+	id: "syllabus-q1.md";
+  slug: "syllabus-q1";
   body: string;
   collection: "blog";
   data: any
